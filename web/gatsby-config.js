@@ -15,6 +15,12 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/favicon.png",
+      },
+    },
+    {
       resolve: "gatsby-plugin-google-fonts-v2",
       options: {
         fonts: [

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout";
 
@@ -11,16 +11,6 @@ const query = graphql`
 `;
 
 function LayoutContainer(props) {
-  const [showNav, setShowNav] = useState(false);
-
-  function handleShowNav() {
-    setShowNav(true);
-  }
-
-  function handleHideNav() {
-    setShowNav(false);
-  }
-
   const data = useStaticQuery(query);
   if (!data.site) {
     throw new Error(
@@ -28,15 +18,7 @@ function LayoutContainer(props) {
     );
   }
 
-  return (
-    <Layout
-      {...props}
-      showNav={showNav}
-      siteTitle={data.site.title}
-      onHideNav={handleHideNav}
-      onShowNav={handleShowNav}
-    />
-  );
+  return <Layout {...props} siteTitle={data.site.title} />;
 }
 
 export default LayoutContainer;

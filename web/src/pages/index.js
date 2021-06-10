@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import GraphQLErrorList from "../components/graphql-error-list";
 import Seo from "../components/seo";
 import Layout from "../containers/layout";
+import HomeHeader from "../components/homeHeader";
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -83,6 +84,7 @@ const IndexPage = (props) => {
         description={site.description}
         keywords={site.keywords}
       />
+      <HomeHeader />
     </Layout>
   );
 };

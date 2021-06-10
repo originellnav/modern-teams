@@ -17,6 +17,9 @@
     "postcss-preset-env": "^6.6.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/image-url": "^0.140.22",
     "date-fns": "^2.19.0",
@@ -24,6 +27,7 @@
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-google-fonts-v2": "^1.0.0",
     "gatsby-plugin-image": "^1.7.0",
+    "gatsby-plugin-manifest": "^3.7.0",
     "gatsby-plugin-postcss": "^4.0.0",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sharp": "^3.7.0",

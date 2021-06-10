@@ -1,3 +1,46 @@
-.wrapper {
+@import "../styles/custom-media.css";
+
+.root {
+    display: flex;
+    justify-content: center;
     width: 100%;
+    border-bottom: 2px solid var(--color-black);
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    height: 70px;
+    padding: 0 20px 0 20px;
+}
+
+.navLink {
+    margin-left: 25px;
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+.button {
+    margin-left: 25px;
+    text-decoration: none;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+}
+
+.menu {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    nav {
+        display: none;
+    }
+
+    .menu {
+        display: inline;
+    }
 }
