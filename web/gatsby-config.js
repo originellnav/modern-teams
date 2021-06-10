@@ -11,7 +11,24 @@ module.exports = {
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-google-fonts-v2",
+      options: {
+        fonts: [
+          {
+            family: "Lato",
+            weights: ["400"],
+          },
+          {
+            family: "Numans",
+            weights: ["400"],
+          },
+        ],
+      },
+    },
     {
       resolve: "gatsby-source-sanity",
       options: {

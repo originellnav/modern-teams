@@ -1,14 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import {
-  filterOutDocsPublishedInTheFuture,
-  filterOutDocsWithoutSlugs,
-  mapEdgesToNodes,
-} from "../lib/helpers";
-import BlogPostPreviewList from "../components/blog-post-preview-list";
-import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import Layout from "../containers/layout";
 
 export const query = graphql`
@@ -76,11 +69,6 @@ const IndexPage = (props) => {
   }
 
   const site = (data || {}).site;
-  const postNodes = (data || {}).posts
-    ? mapEdgesToNodes(data.posts)
-        .filter(filterOutDocsWithoutSlugs)
-        .filter(filterOutDocsPublishedInTheFuture)
-    : [];
 
   if (!site) {
     throw new Error(
@@ -90,21 +78,11 @@ const IndexPage = (props) => {
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title={site.title}
         description={site.description}
         keywords={site.keywords}
       />
-      <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
-        {postNodes && (
-          <BlogPostPreviewList
-            title="Latest blog posts"
-            nodes={postNodes}
-            browseMoreHref="/archive/"
-          />
-        )}
-      </Container>
     </Layout>
   );
 };

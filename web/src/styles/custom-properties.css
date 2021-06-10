@@ -1,5 +1,6 @@
 :root {
-  --font-family-sans: -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-sans: "Numans", sans-serif;
+  --font-family-headings: "Lato", sans-serif;
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
