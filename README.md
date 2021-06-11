@@ -1,14 +1,6 @@
 # Modern Teams
 
-_Fully customizable blog template with a React.js front-end._
-
-Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-gatsby-blog).
-
-## What you have
-
-- A blazing fast blog with [Gatsby.js](https://gatsbyjs.org)
-- Structured content using [Sanity.io](https://www.sanity.io)
-- Global deployment on [Netlify](https://netlify.com)
+_Modern Teams is a directory listing forward-thinking companies that have passed our sniff test for providing their teams with the freedom and flexibility to do their best work._
 
 ## Quick start
 
