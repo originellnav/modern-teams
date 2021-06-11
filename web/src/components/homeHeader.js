@@ -10,12 +10,44 @@ const homeHeader = () => {
         <h2>Work from anywhere</h2>
       </section>
       <section className={styles.categories}>
-        <div className={styles.topRow}>
-          <Link to="/" className={styles.inactive}>
-            Accessories
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <div className={styles.activeWrapper}>
+          <Link to="/" className={styles.active}>
+            Category
           </Link>
         </div>
-        <div className={styles.bottomRow}>Second Row</div>
       </section>
     </div>
   );
