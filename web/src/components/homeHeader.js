@@ -31,23 +31,23 @@ const homeHeader = () => {
         <Link to="/" className={styles.inactive}>
           Category
         </Link>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
         <div className={styles.activeWrapper}>
           <Link to="/" className={styles.active}>
-            Category
+            Active Category
           </Link>
         </div>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          Category
+        </Link>
+        <Link to="/" className={styles.inactive}>
+          All Categories
+        </Link>
       </section>
     </div>
   );
