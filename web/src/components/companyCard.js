@@ -15,11 +15,7 @@ const companyCard = ({ iconSrc, title, description }) => {
     <article className={styles.wrapper}>
       <div className={styles.contentWrapper}>
         <div className={styles.icon}>
-          <GatsbyImage
-            image={gatsbyImageData}
-            alt="Company Icon"
-            caption="Company Icon"
-          />
+          <GatsbyImage image={gatsbyImageData} />
         </div>
         <div className={styles.title}>{title}</div>
         <div className={styles.description}>{description}</div>

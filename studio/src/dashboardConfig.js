@@ -9,11 +9,10 @@ export default {
             name: "netlify",
             options: {
               description:
-                "NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.",
+                "NOTE: Contact developer if you see 'Failed' instead of 'Success' or 'Building.'",
               sites: [
                 {
-                  buildHookId:
-                    "60c212299d4ea42839d885c1",
+                  buildHookId: "60c212299d4ea42839d885c1",
                   title: "Sanity Studio",
                   name: "modern-teams-studio-rqvsjw93",
                   apiId: "35f0dd5f-41b1-4ee9-80e9-0a2d28af1b6b",
@@ -31,8 +30,7 @@ export default {
         data: [
           {
             title: "GitHub repo",
-            value:
-              "https://github.com/originellnav/modern-teams",
+            value: "https://github.com/originellnav/modern-teams",
             category: "Code",
           },
           {

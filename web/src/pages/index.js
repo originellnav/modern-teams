@@ -5,6 +5,7 @@ import Seo from "../components/seo";
 import Layout from "../containers/layout";
 import HomeHeader from "../components/homeHeader";
 import CompanyGrid from "../components/companyGrid";
+import CompanyCard from "../components/companyCard";
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -56,6 +57,16 @@ export const query = graphql`
         }
       }
     }
+    home: sanityHome {
+      iconImage {
+        asset {
+          _id
+        }
+        caption
+        alt
+        ...SanityImage
+      }
+    }
   }
 `;
 
@@ -71,6 +82,7 @@ const IndexPage = (props) => {
   }
 
   const site = (data || {}).site;
+  const home = (data || {}).home;
 
   if (!site) {
     throw new Error(
@@ -86,7 +98,58 @@ const IndexPage = (props) => {
         keywords={site.keywords}
       />
       <HomeHeader />
-      <CompanyGrid />
+      <CompanyGrid>
+        <CompanyCard
+          iconSrc={home.iconImage}
+          title="Buffer"
+          description="yada yada yada yada yada yada yada yada yada"
+        />
+        <CompanyCard
+          iconSrc={home.iconImage}
+          title="Buffer"
+          description="yada yada yada yada yada yada yada yada yada"
+        />
+        <CompanyCard
+          iconSrc={home.iconImage}
+          title="Buffer"
+          description="yada yada yada yada yada yada yada yada yada"
+        />
+        <CompanyCard
+          iconSrc={home.iconImage}
+          title="Buffer"
+          description="yada yada yada yada yada yada yada yada yada"
+        />
+        <CompanyCard
+          iconSrc={home.iconImage}
+          title="Buffer"
+          description="yada yada yada yada yada yada yada yada yada"
+        />
+        <CompanyCard
+          iconSrc={home.iconImage}
+          title="Buffer"
+          description="yada yada yada yada yada yada yada yada yada"
+        />
+        <CompanyCard
+          iconSrc={home.iconImage}
+          title="Buffer"
+          description="yada yada yada yada yada yada yada yada yada"
+        />
+        <CompanyCard
+          iconSrc={home.iconImage}
+          title="Buffer"
+          description="yada yada yada yada yada yada yada yada yada"
+        />
+        <CompanyCard
+          iconSrc={home.iconImage}
+          title="Buffer"
+          description="yada yada yada yada yada yada yada yada yada"
+        />
+        <CompanyCard
+          iconSrc={home.iconImage}
+          title="Buffer"
+          description="yada yada yada yada yada yada yada yada yada"
+        />
+      </CompanyGrid>
     </Layout>
   );
 };
