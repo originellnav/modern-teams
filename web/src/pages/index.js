@@ -58,7 +58,7 @@ export const query = graphql`
         }
       }
     }
-    companies: allSanityCompany {
+    companies: allSanityCompany(sort: { fields: [companyName], order: ASC }) {
       edges {
         node {
           _id
