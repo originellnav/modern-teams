@@ -23,6 +23,10 @@ export function getBlogUrl(publishedAt, slug) {
   }/`;
 }
 
+export function getCompanyUrl(slug) {
+  return `/companies/${slug.current || slug}/`;
+}
+
 export function buildImageObj(source = { asset: {} }) {
   const imageObj = {
     asset: { _ref: source.asset._ref || source.asset._id },

@@ -4,24 +4,40 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { getGatsbyImageData } from "gatsby-source-sanity";
 import clientConfig from "../../client-config";
 import { Link } from "gatsby";
+import { getCompanyUrl } from "../lib/helpers";
 
-const companyCard = ({ iconSrc, title, description }) => {
+const companyCard = ({
+  logoSrc,
+  logoAlt,
+  logoCap,
+  companyName,
+  companyExcerpt,
+  companyPage,
+}) => {
   const gatsbyImageData = getGatsbyImageData(
-    iconSrc,
-    { placeholder: "blurred", layout: "constrained", width: 100 },
+    logoSrc,
+    {
+      placeholder: "blurred",
+      layout: "constrained",
+      width: 100,
+    },
     clientConfig.sanity
   );
   return (
     <article className={styles.wrapper}>
       <div className={styles.contentWrapper}>
         <div className={styles.icon}>
-          <GatsbyImage image={gatsbyImageData} />
+          <GatsbyImage
+            image={gatsbyImageData}
+            alt={logoAlt}
+            caption={logoCap}
+          />
         </div>
-        <div className={styles.title}>{title}</div>
-        <div className={styles.description}>{description}</div>
+        <div className={styles.title}>{companyName}</div>
+        <div className={styles.description}>{companyExcerpt}</div>
       </div>
       <div className={styles.buttonWrapper}>
-        <Link to="/" className={styles.button}>
+        <Link to={getCompanyUrl(companyPage)} className={styles.button}>
           Learn More
         </Link>
       </div>

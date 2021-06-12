@@ -24,12 +24,23 @@ async function createBlogPostPages(graphql, actions) {
           }
         }
       }
+      allSanityCompany(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+          }
+        }
+      }
     }
   `);
 
   if (result.errors) throw result.errors;
 
   const postEdges = (result.data.allSanityPost || {}).edges || [];
+  const companyEdges = (result.data.allSanityCompany || {}).edges || [];
 
   postEdges
     .filter((edge) => !isFuture(new Date(edge.node.publishedAt)))
@@ -44,6 +55,17 @@ async function createBlogPostPages(graphql, actions) {
         context: { id },
       });
     });
+
+  companyEdges.forEach((edge) => {
+    const { id, slug = {} } = edge.node;
+    const path = `/companies/${slug.current}/`;
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/company-page.js"),
+      context: { id },
+    });
+  });
 }
 
 exports.createPages = async ({ graphql, actions }) => {

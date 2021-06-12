@@ -1,3 +1,6 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
 .container {
     display: flex;
     flex-direction: column;

@@ -24,7 +24,7 @@ const navBar = () => {
           <Link to="/about/" className={styles.navLink}>
             About
           </Link>
-          <Link to="/blog/" className={styles.navLink}>
+          <Link to="/archive/" className={styles.navLink}>
             Blog
           </Link>
           <Link to="/getlisted/" className={styles.button}>

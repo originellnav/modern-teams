@@ -1,3 +1,6 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
 html {
   font-family: var(--font-family-sans);
   font-size: var(--font-base-size);

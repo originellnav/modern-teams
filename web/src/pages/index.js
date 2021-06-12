@@ -6,6 +6,7 @@ import Layout from "../containers/layout";
 import HomeHeader from "../components/homeHeader";
 import CompanyGrid from "../components/companyGrid";
 import CompanyCard from "../components/companyCard";
+import { mapEdgesToNodes } from "../lib/helpers";
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -57,6 +58,26 @@ export const query = graphql`
         }
       }
     }
+    companies: allSanityCompany {
+      edges {
+        node {
+          _id
+          companyExcerpt
+          companyLogo {
+            asset {
+              _id
+            }
+            ...SanityImage
+            caption
+            alt
+          }
+          companyName
+          slug {
+            current
+          }
+        }
+      }
+    }
     home: sanityHome {
       iconImage {
         asset {
@@ -83,6 +104,9 @@ const IndexPage = (props) => {
 
   const site = (data || {}).site;
   const home = (data || {}).home;
+  const companies = (data || {}).companies
+    ? mapEdgesToNodes(data.companies)
+    : [];
 
   if (!site) {
     throw new Error(
@@ -99,56 +123,17 @@ const IndexPage = (props) => {
       />
       <HomeHeader />
       <CompanyGrid>
-        <CompanyCard
-          iconSrc={home.iconImage}
-          title="Buffer"
-          description="yada yada yada yada yada yada yada yada yada"
-        />
-        <CompanyCard
-          iconSrc={home.iconImage}
-          title="Buffer"
-          description="yada yada yada yada yada yada yada yada yada"
-        />
-        <CompanyCard
-          iconSrc={home.iconImage}
-          title="Buffer"
-          description="yada yada yada yada yada yada yada yada yada"
-        />
-        <CompanyCard
-          iconSrc={home.iconImage}
-          title="Buffer"
-          description="yada yada yada yada yada yada yada yada yada"
-        />
-        <CompanyCard
-          iconSrc={home.iconImage}
-          title="Buffer"
-          description="yada yada yada yada yada yada yada yada yada"
-        />
-        <CompanyCard
-          iconSrc={home.iconImage}
-          title="Buffer"
-          description="yada yada yada yada yada yada yada yada yada"
-        />
-        <CompanyCard
-          iconSrc={home.iconImage}
-          title="Buffer"
-          description="yada yada yada yada yada yada yada yada yada"
-        />
-        <CompanyCard
-          iconSrc={home.iconImage}
-          title="Buffer"
-          description="yada yada yada yada yada yada yada yada yada"
-        />
-        <CompanyCard
-          iconSrc={home.iconImage}
-          title="Buffer"
-          description="yada yada yada yada yada yada yada yada yada"
-        />
-        <CompanyCard
-          iconSrc={home.iconImage}
-          title="Buffer"
-          description="yada yada yada yada yada yada yada yada yada"
-        />
+        {companies.map((node) => (
+          <CompanyCard
+            key={node.id}
+            logoSrc={node.companyLogo}
+            logoAlt={node.companyLogo.alt}
+            logoCap={node.companyLogo.caption}
+            companyName={node.companyName}
+            companyExcerpt={node.companyExcerpt}
+            companyPage={node.slug.current}
+          />
+        ))}
       </CompanyGrid>
     </Layout>
   );
