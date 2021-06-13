@@ -6,13 +6,13 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 320px;
 }
 
 .contentWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 300px;
   padding: 16px;
 }
@@ -39,9 +39,14 @@
 }
 
 .description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
   text-align: center;
   color: #616161;
   font-weight: 700;
+  height: 41px;
 }
 
 .button {

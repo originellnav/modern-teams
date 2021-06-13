@@ -10,12 +10,13 @@
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 370px);
+    grid-template-columns: repeat(auto-fill, minmax(274px, 1fr));
     grid-template-rows: auto;
-    gap: 16px;
     width: 100%;
     max-width: 1200px;
-    padding: 32px 0 32px 0;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
     justify-content: center;
     border: 1px solid var(--color-black);
 }

@@ -1,8 +1,26 @@
 import React from "react";
 import * as styles from "./homeHeader.module.css";
 import { Link } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
+import { mapEdgesToNodes } from "../lib/helpers";
 
 const homeHeader = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      categories: allSanityCategory(sort: { order: ASC, fields: title }) {
+        edges {
+          node {
+            id
+            title
+          }
+        }
+      }
+    }
+  `);
+
+  const categories =
+    data && data.categories && mapEdgesToNodes(data.categories);
+
   return (
     <div className={styles.wrapper}>
       <section className={styles.headerSection}>
@@ -10,44 +28,17 @@ const homeHeader = () => {
         <h2>Work from anywhere</h2>
       </section>
       <section className={styles.categories}>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <div className={styles.activeWrapper}>
+        <span className={styles.activeWrapper}>
           <Link to="/" className={styles.active}>
-            Active Category
+            All
           </Link>
-        </div>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <Link to="/" className={styles.inactive}>
-          Category
-        </Link>
-        <Link to="/" className={styles.inactive}>
-          All Categories
-        </Link>
+        </span>
+
+        {categories.map((node) => (
+          <Link to="/" className={styles.underline} key={node.id}>
+            {node.title}
+          </Link>
+        ))}
       </section>
     </div>
   );

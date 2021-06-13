@@ -7,14 +7,40 @@
   align-items: center;
   width: 100%;
   text-align: center;
-  margin-bottom: 80px;
 }
 
-.inactive {
+.underline {
+  position: relative;
   color: #666666;
   font-weight: 700;
   text-decoration: none;
-  padding: 16px;
+  margin: 16px;
+  padding-bottom: 5px;
+  transition: 1s;
+  white-space: nowrap;
+}
+
+.underline:hover {
+  color: var(--color-black);
+}
+
+.underline::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-black);
+  transition: width 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .underline:hover::before {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
 }
 
 .activeWrapper {
@@ -25,27 +51,37 @@
   color: var(--color-black);
   font-weight: 700;
   text-decoration: none;
-  border-bottom: 2px solid var(--color-black);
+  border-bottom: 3px solid var(--color-black);
   padding: 0 0 3px 0;
 }
 
 .headerSection {
   max-width: 1200px;
   margin: 36px 0 36px 0;
+
+  @media (max-width: 414px) {
+    margin: 0;
+  }
 }
 
 h1 {
   font-weight: 600;
   font-size: var(--font-fluid-large-heading);
   line-height: var(--font-title1-line-height);
-  margin: 1rem 0 2rem;
+
+  @media (max-width: 414px) {
+    padding: 0 10px 0 10px;
+  }
 }
 
 h2 {
     font-weight: 700;
     font-size: var(--font-fluid-large-subheading);
     line-height: var(--font-title2-line-height);
-    margin: 1rem 0 2rem;
+
+    @media (max-width: 414px) {
+      padding: 0 10px 0 10px;
+    }
 }
 
 .categories {
@@ -53,4 +89,13 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     max-width: 1100px;
+    width: 100%;
+    margin-bottom: 50px;
+
+    @media (max-width: 414px) {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow: scroll;
+      margin-bottom: 0;
+    }
 }

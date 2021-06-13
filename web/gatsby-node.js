@@ -7,7 +7,7 @@ const { isFuture } = require("date-fns");
 
 const { format } = require("date-fns");
 
-async function createBlogPostPages(graphql, actions) {
+async function createNewPages(graphql, actions) {
   const { createPage } = actions;
   const result = await graphql(`
     {
@@ -69,5 +69,5 @@ async function createBlogPostPages(graphql, actions) {
 }
 
 exports.createPages = async ({ graphql, actions }) => {
-  await createBlogPostPages(graphql, actions);
+  await createNewPages(graphql, actions);
 };

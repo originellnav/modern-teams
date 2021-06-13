@@ -10,12 +10,14 @@ const navBar = () => {
     <div className={styles.root}>
       <div className={styles.wrapper}>
         <div>
-          <StaticImage
-            src="../images/logo.png"
-            alt="Modern Teams Logo"
-            height={40}
-            placeholder="blurred"
-          />
+          <Link to="/">
+            <StaticImage
+              src="../images/logo.png"
+              alt="Modern Teams Logo"
+              height={40}
+              placeholder="blurred"
+            />
+          </Link>
         </div>
         <nav>
           <Link to="/" className={styles.navLink}>

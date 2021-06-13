@@ -26,7 +26,7 @@
   --font-title2-size: calc(24 / var(--unit) * 1rem); /* 24px */
   --font-title2-line-height: calc(29 / 24);
   --font-title1-size: calc(49 / var(--unit) * 1rem); /* 49px */
-  --font-title1-line-height: calc(37 / 49);
-  --font-fluid-large-heading: calc(22px + 30 * ((100vw - 320px) / 1180));
-  --font-fluid-large-subheading: calc(18px + 20 * ((100vw - 320px) / 1180));
+  --font-title1-line-height: calc(50 / 49);
+  --font-fluid-large-heading: calc(32px + 30 * ((100vw - 320px) / 1180));
+  --font-fluid-large-subheading: calc(22px + 20 * ((100vw - 320px) / 1180));
 }
