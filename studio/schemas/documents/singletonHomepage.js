@@ -4,10 +4,20 @@ export default {
   type: "document",
   fields: [
     {
-      title: "Icon Image Test",
-      name: "iconImage",
-      type: "mainImage",
+      title: "Heading",
+      name: "homepageHeading",
+      type: "string",
       validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Subheading",
+      name: "homepageSubheading",
+      type: "array",
+      of: [
+        {
+          type: "string",
+        },
+      ],
     },
   ],
 };

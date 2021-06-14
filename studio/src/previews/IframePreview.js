@@ -21,6 +21,17 @@ const assemblePostUrl = ({ displayed, options }) => {
   return `${previewURL}/blog${path}`;
 };
 
+const assembleCompanyUrl = ({ displayed, options }) => {
+  const { slug } = displayed;
+  const { previewURL } = options;
+  if (!slug || !previewURL) {
+    console.warn("Missing slug or previewURL", { slug, previewURL });
+    return "";
+  }
+  const path = `/${slug.current}/`;
+  return `${previewURL}/companies${path}`;
+};
+
 const IframePreview = (props) => {
   const { options } = props;
   const { displayed } = props.document;
@@ -33,9 +44,10 @@ const IframePreview = (props) => {
     );
   }
 
-  const url = assemblePostUrl({ displayed, options });
+  const blogUrl = assemblePostUrl({ displayed, options });
+  const companyUrl = assembleCompanyUrl({ displayed, options });
 
-  if (!url) {
+  if (!blogUrl && !companyUrl) {
     return (
       <div className={styles.componentWrapper}>
         <p>Hmm. Having problems constructing the web front-end URL.</p>
@@ -43,13 +55,25 @@ const IframePreview = (props) => {
     );
   }
 
-  return (
-    <div className={styles.componentWrapper}>
-      <div className={styles.iframeContainer}>
-        <iframe src={url} frameBorder={"0"} />
+  if (displayed._type == "post") {
+    return (
+      <div className={styles.componentWrapper}>
+        <div className={styles.iframeContainer}>
+          <iframe src={blogUrl} frameBorder={"0"} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  if (displayed._type == "company") {
+    return (
+      <div className={styles.componentWrapper}>
+        <div className={styles.iframeContainer}>
+          <iframe src={companyUrl} frameBorder={"0"} />
+        </div>
+      </div>
+    );
+  }
 };
 
 IframePreview.propTypes = {

@@ -18,7 +18,7 @@ export const getDefaultDocumentNode = (props) => {
    * https://www.sanity.io/docs/structure-builder-reference#getdefaultdocumentnode-97e44ce262c9
    */
   const { schemaType } = props;
-  if (schemaType == "post") {
+  if (schemaType == "post" || schemaType == "company") {
     return S.document().views([
       S.view.form(),
       S.view
@@ -44,36 +44,6 @@ export default () =>
     .title("Content")
     .items([
       S.listItem()
-        .title("Settings")
-        .icon(MdSettings)
-        .child(
-          S.editor()
-            .id("siteSettings")
-            .schemaType("siteSettings")
-            .documentId("siteSettings")
-        ),
-      S.divider(),
-      S.listItem()
-        .title("Blog posts")
-        .icon(MdDescription)
-        .schemaType("post")
-        .child(S.documentTypeList("post").title("Blog posts")),
-      S.listItem()
-        .title("Company Entries")
-        .icon(MdDescription)
-        .schemaType("company")
-        .child(S.documentTypeList("company").title("Company Entries")),
-      S.listItem()
-        .title("Authors")
-        .icon(MdPerson)
-        .schemaType("author")
-        .child(S.documentTypeList("author").title("Authors")),
-      S.listItem()
-        .title("Categories")
-        .icon(MdLocalOffer)
-        .schemaType("category")
-        .child(S.documentTypeList("category").title("Categories")),
-      S.listItem()
         .title("Homepage")
         .icon(MdHome)
         .child(
@@ -81,6 +51,37 @@ export default () =>
             .id("home")
             .schemaType("home")
             .documentId("singletonHomepage")
+        ),
+      S.listItem()
+        .title("Company Entries")
+        .icon(MdDescription)
+        .schemaType("company")
+        .child(S.documentTypeList("company").title("Company Entries")),
+      S.listItem()
+        .title("Blog posts")
+        .icon(MdDescription)
+        .schemaType("post")
+        .child(S.documentTypeList("post").title("Blog posts")),
+      S.divider(),
+      S.listItem()
+        .title("Categories")
+        .icon(MdLocalOffer)
+        .schemaType("category")
+        .child(S.documentTypeList("category").title("Categories")),
+      S.listItem()
+        .title("Authors")
+        .icon(MdPerson)
+        .schemaType("author")
+        .child(S.documentTypeList("author").title("Authors")),
+      S.divider(),
+      S.listItem()
+        .title("Settings")
+        .icon(MdSettings)
+        .child(
+          S.editor()
+            .id("siteSettings")
+            .schemaType("siteSettings")
+            .documentId("siteSettings")
         ),
       // `S.documentTypeListItems()` returns an array of all the document types
       // defined in schema.js. We filter out those that we have
