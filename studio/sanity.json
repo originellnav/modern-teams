@@ -35,6 +35,10 @@
     {
       "implements": "part:@sanity/dashboard/config",
       "path": "./src/dashboardConfig.js"
+    },
+    {
+      "implements": "part:@sanity/base/brand-logo",
+      "path": "./components/mtLogo.js"
     }
   ]
 }
