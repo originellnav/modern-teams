@@ -11,7 +11,7 @@
 .wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(274px, 1fr));
-    grid-template-rows: auto;
+    grid-row-gap: 20px;
     width: 100%;
     max-width: 1200px;
     gap: 20px;

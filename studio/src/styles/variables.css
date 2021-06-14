@@ -1,24 +1,12 @@
-/*
-  Learn more:
-  https://www.sanity.io/guides/how-to-brand-your-studio
-*/
-
-
-
-@import url('https://fonts.googleapis.com/css?family=Numans&display=swap');
-
-
 :root {
   --brand-primary: #434343;
   --brand-primary--inverted: #ffffff;
-  --brand-secondary: rgb(172, 23, 23);
+  --brand-secondary: #000;
   --brand-secondary--inverted: #000;
 
- 
-  --font-family-sans-serif: 'Numans';
   --font-size-base: 18px;
-  --text-color: var(--brand-secondary--inverted);
+  --text-color: #434343;
 
-  --main-navigation-color: #efefef;
+  --main-navigation-color: #f7f7f7;
   --main-navigation-color--inverted: #000;
 }
