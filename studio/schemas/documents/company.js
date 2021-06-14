@@ -34,6 +34,7 @@ export default {
       name: "companyBody",
       type: "bodyPortableText",
       title: "Body",
+      description: "Content typed here is displayed on the company's page.",
     },
     {
       name: "categories",
@@ -49,4 +50,11 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      title: "companyName",
+      media: "companyLogo",
+      subtitle: "companyExcerpt",
+    },
+  },
 };

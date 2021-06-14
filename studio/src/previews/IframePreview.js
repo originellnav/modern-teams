@@ -44,32 +44,39 @@ const IframePreview = (props) => {
     );
   }
 
-  const blogUrl = assemblePostUrl({ displayed, options });
-  const companyUrl = assembleCompanyUrl({ displayed, options });
-
-  if (!blogUrl && !companyUrl) {
-    return (
-      <div className={styles.componentWrapper}>
-        <p>Hmm. Having problems constructing the web front-end URL.</p>
-      </div>
-    );
-  }
-
   if (displayed._type == "post") {
+    const url = assemblePostUrl({ displayed, options });
+
+    if (!url) {
+      return (
+        <div className={styles.componentWrapper}>
+          <p>Hmm. Having problems constructing the web front-end URL.</p>
+        </div>
+      );
+    }
+
     return (
       <div className={styles.componentWrapper}>
         <div className={styles.iframeContainer}>
-          <iframe src={blogUrl} frameBorder={"0"} />
+          <iframe src={url} frameBorder={"0"} />
         </div>
       </div>
     );
-  }
+  } else if (displayed._type == "company") {
+    const url = assembleCompanyUrl({ displayed, options });
 
-  if (displayed._type == "company") {
+    if (!url) {
+      return (
+        <div className={styles.componentWrapper}>
+          <p>Hmm. Having problems constructing the web front-end URL.</p>
+        </div>
+      );
+    }
+
     return (
       <div className={styles.componentWrapper}>
         <div className={styles.iframeContainer}>
-          <iframe src={companyUrl} frameBorder={"0"} />
+          <iframe src={url} frameBorder={"0"} />
         </div>
       </div>
     );

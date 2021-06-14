@@ -1,6 +1,8 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { MdSettings } from "react-icons/md";
 import { MdPerson, MdDescription, MdLocalOffer, MdHome } from "react-icons/md";
+import EyeIcon from "part:@sanity/base/eye-icon";
+import EditIcon from "part:@sanity/base/edit-icon";
 import IframePreview from "../previews/IframePreview";
 
 // Web preview configuration
@@ -20,10 +22,11 @@ export const getDefaultDocumentNode = (props) => {
   const { schemaType } = props;
   if (schemaType == "post" || schemaType == "company") {
     return S.document().views([
-      S.view.form(),
+      S.view.form().icon(EditIcon),
       S.view
         .component(IframePreview)
-        .title("Web preview")
+        .title("Web Preview")
+        .icon(EyeIcon)
         .options({ previewURL }),
     ]);
   }
