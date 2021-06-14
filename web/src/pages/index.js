@@ -79,14 +79,8 @@ export const query = graphql`
       }
     }
     home: sanityHome {
-      iconImage {
-        asset {
-          _id
-        }
-        caption
-        alt
-        ...SanityImage
-      }
+      homepageHeading
+      homepageSubheading
     }
   }
 `;

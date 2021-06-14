@@ -6,7 +6,6 @@ import Container from "../components/container";
 import BlogPostPreviewGrid from "../components/blog-post-preview-grid";
 import { graphql } from "gatsby";
 import { mapEdgesToNodes } from "../lib/helpers";
-
 import { responsiveTitle1 } from "../components/typography.module.css";
 
 export const query = graphql`
