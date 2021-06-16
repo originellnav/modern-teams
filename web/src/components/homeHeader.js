@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as styles from "./homeHeader.module.css";
 import { Link } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby";
@@ -35,9 +35,9 @@ const homeHeader = () => {
         </span>
 
         {categories.map((node) => (
-          <Link to="/" className={styles.underline} key={node.id}>
+          <button className={styles.underline} key={node.id}>
             {node.title}
-          </Link>
+          </button>
         ))}
       </section>
     </div>

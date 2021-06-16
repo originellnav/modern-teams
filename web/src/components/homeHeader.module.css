@@ -1,6 +1,13 @@
 @import '../styles/custom-media.css';
 @import '../styles/custom-properties.css';
 
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -57,10 +64,10 @@
 
 .headerSection {
   max-width: 1200px;
-  margin: 36px 0 36px 0;
+  margin: 86px 0 36px 0;
 
   @media (max-width: 414px) {
-    margin: 0;
+    margin: 86px 0 0 0;
   }
 }
 
