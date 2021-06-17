@@ -21,21 +21,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-google-fonts-v2",
-      options: {
-        fonts: [
-          {
-            family: "Lato",
-            weights: ["400"],
-          },
-          {
-            family: "Numans",
-            weights: ["400"],
-          },
-        ],
-      },
-    },
-    {
       resolve: "gatsby-source-sanity",
       options: {
         ...clientConfig.sanity,

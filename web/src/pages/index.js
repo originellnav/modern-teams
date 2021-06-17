@@ -96,9 +96,6 @@ const IndexPage = (props) => {
     );
   }
 
-  const categories = (data || {}).categories
-    ? mapEdgesToNodes(data.categories)
-    : [];
   const site = (data || {}).site;
   const home = (data || {}).home;
   const companies = (data || {}).companies
