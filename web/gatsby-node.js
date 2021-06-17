@@ -34,6 +34,16 @@ async function createNewPages(graphql, actions) {
           }
         }
       }
+      allSanityCategory {
+        edges {
+          node {
+            slug {
+              current
+            }
+            id
+          }
+        }
+      }
     }
   `);
 
@@ -41,6 +51,7 @@ async function createNewPages(graphql, actions) {
 
   const postEdges = (result.data.allSanityPost || {}).edges || [];
   const companyEdges = (result.data.allSanityCompany || {}).edges || [];
+  const categoryEdges = (result.data.allSanityCategory || {}).edges || [];
 
   postEdges
     .filter((edge) => !isFuture(new Date(edge.node.publishedAt)))
@@ -66,8 +77,46 @@ async function createNewPages(graphql, actions) {
       context: { id },
     });
   });
+
+  categoryEdges.forEach((edge) => {
+    const { id, slug = {} } = edge.node;
+    const path = `/categories/${slug.current}/`;
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/category.js"),
+      context: { id },
+    });
+  });
 }
 
 exports.createPages = async ({ graphql, actions }) => {
   await createNewPages(graphql, actions);
+};
+
+exports.createResolvers = ({ createResolvers }) => {
+  const resolvers = {
+    SanityCategory: {
+      companies: {
+        type: ["SanityCompany"],
+        resolve(source, args, context, info) {
+          return context.nodeModel.runQuery({
+            type: "SanityCompany",
+            query: {
+              filter: {
+                categories: {
+                  elemMatch: {
+                    _id: {
+                      eq: source._id,
+                    },
+                  },
+                },
+              },
+            },
+          });
+        },
+      },
+    },
+  };
+  createResolvers(resolvers);
 };

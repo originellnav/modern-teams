@@ -23,6 +23,7 @@ const companyCard = ({
     },
     clientConfig.sanity
   );
+
   return (
     <article className={styles.wrapper}>
       <div className={styles.contentWrapper}>

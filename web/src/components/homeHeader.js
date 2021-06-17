@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import * as styles from "./homeHeader.module.css";
-import { Link } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby";
 import { mapEdgesToNodes } from "../lib/helpers";
+import { Link } from "gatsby";
+import { getCategoryUrl } from "../lib/helpers";
 
 const homeHeader = () => {
   const data = useStaticQuery(graphql`
@@ -12,6 +13,9 @@ const homeHeader = () => {
           node {
             id
             title
+            slug {
+              current
+            }
           }
         }
       }
@@ -29,15 +33,24 @@ const homeHeader = () => {
       </section>
       <section className={styles.categories}>
         <span className={styles.activeWrapper}>
-          <Link to="/" className={styles.active}>
+          <Link
+            to="/"
+            className={styles.underline}
+            activeClassName={styles.active}
+          >
             All
           </Link>
         </span>
 
         {categories.map((node) => (
-          <button className={styles.underline} key={node.id}>
+          <Link
+            to={getCategoryUrl(node.slug.current)}
+            className={styles.underline}
+            activeClassName={styles.active}
+            key={node.id}
+          >
             {node.title}
-          </button>
+          </Link>
         ))}
       </section>
     </div>

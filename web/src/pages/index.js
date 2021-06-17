@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import GraphQLErrorList from "../components/graphql-error-list";
-import Seo from "../components/seo";
 import Layout from "../containers/layout";
+import Seo from "../components/seo";
 import HomeHeader from "../components/homeHeader";
 import CompanyGrid from "../components/companyGrid";
 import CompanyCard from "../components/companyCard";
@@ -75,9 +75,6 @@ export const query = graphql`
           slug {
             current
           }
-          categories {
-            title
-          }
         }
       }
     }
@@ -99,6 +96,9 @@ const IndexPage = (props) => {
     );
   }
 
+  const categories = (data || {}).categories
+    ? mapEdgesToNodes(data.categories)
+    : [];
   const site = (data || {}).site;
   const home = (data || {}).home;
   const companies = (data || {}).companies

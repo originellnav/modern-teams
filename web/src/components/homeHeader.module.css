@@ -1,12 +1,5 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
-
-button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
-}
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .wrapper {
   display: flex;
@@ -32,7 +25,7 @@ button {
 }
 
 .underline::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -42,16 +35,8 @@ button {
   transition: width 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .underline:hover::before {
-    left: 0;
-    right: auto;
-    width: 100%;
-  }
-}
-
 .activeWrapper {
-    padding: 16px;
+  padding: 16px;
 }
 
 .active {
@@ -60,6 +45,18 @@ button {
   text-decoration: none;
   border-bottom: 3px solid var(--color-black);
   padding: 0 0 3px 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .underline:hover::before {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+
+  .active:hover::before {
+    width: 0;
+  }
 }
 
 .headerSection {
@@ -82,27 +79,27 @@ h1 {
 }
 
 h2 {
-    font-weight: 700;
-    font-size: var(--font-fluid-large-subheading);
-    line-height: var(--font-title2-line-height);
+  font-weight: 700;
+  font-size: var(--font-fluid-large-subheading);
+  line-height: var(--font-title2-line-height);
 
-    @media (max-width: 414px) {
-      padding: 0 10px 0 10px;
-    }
+  @media (max-width: 414px) {
+    padding: 0 10px 0 10px;
+  }
 }
 
 .categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1100px;
-    width: 100%;
-    margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1100px;
+  width: 100%;
+  margin-bottom: 50px;
 
-    @media (max-width: 800px) {
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      overflow: scroll;
-      margin-bottom: 0;
-    }
+  @media (max-width: 800px) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow: scroll;
+    margin-bottom: 0;
+  }
 }
