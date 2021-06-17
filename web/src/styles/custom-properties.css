@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Mabry";
   src: url("../fonts/mabry-regular-pro.ttf");
+  display: swap;
 }
 
 :root {
