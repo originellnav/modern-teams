@@ -1,3 +1,4 @@
+
 @import '../styles/custom-media.css';
 @import '../styles/custom-properties.css';
 
@@ -56,6 +57,7 @@
   }
 
 .button {
+    white-space: nowrap; /* Needed to keep Safari from breaking button in half */
     margin-left: 25px;
     text-decoration: none;
     background-color: var(--color-black);
