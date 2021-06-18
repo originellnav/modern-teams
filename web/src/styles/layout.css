@@ -14,13 +14,6 @@ body {
   margin: 0;
 }
 
-html,
-body,
-body > div,
-body > div > div {
-  height: 100%;
-}
-
 h1,
 h2,
 h3,

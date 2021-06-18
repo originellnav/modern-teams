@@ -3,9 +3,9 @@ import HomeHeader from "./homeHeader";
 import CompanyGrid from "./companyGrid";
 import CompanyCard from "./companyCard";
 
-const categoryPage = ({ title, description, companies }) => {
+const categoryPage = ({ companies }) => {
   return (
-    <div>
+    <>
       <HomeHeader />
       <CompanyGrid>
         {companies.map((node) => (
@@ -20,7 +20,7 @@ const categoryPage = ({ title, description, companies }) => {
           />
         ))}
       </CompanyGrid>
-    </div>
+    </>
   );
 };
 

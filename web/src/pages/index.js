@@ -109,7 +109,7 @@ const IndexPage = (props) => {
   }
 
   return (
-    <Layout>
+    <>
       <Seo
         title={site.title}
         description={site.description}
@@ -129,7 +129,7 @@ const IndexPage = (props) => {
           />
         ))}
       </CompanyGrid>
-    </Layout>
+    </>
   );
 };
 

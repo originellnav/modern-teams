@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../containers/layout";
 import SEO from "../components/seo";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
@@ -9,8 +8,6 @@ import CategoryPage from "../components/categoryPage";
 export const query = graphql`
   query CategoryTemplateQuery($id: String!) {
     category: sanityCategory(id: { eq: $id }) {
-      title
-      description
       companies {
         _id
         companyExcerpt
@@ -36,7 +33,7 @@ const categoryPageTemplate = (props) => {
   const category = data && data.category;
 
   return (
-    <Layout>
+    <>
       {errors && <SEO title="GraphQL Error" />}
       {category && (
         <SEO
@@ -52,7 +49,7 @@ const categoryPageTemplate = (props) => {
       )}
 
       {category && <CategoryPage {...category} />}
-    </Layout>
+    </>
   );
 };
 
