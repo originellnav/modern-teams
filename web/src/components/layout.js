@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import * as styles from "./layout.module.css";
 import "../styles/layout.css";
 import NavBar from "./navBar";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import addToMailchimp from "gatsby-plugin-mailchimp";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faExclamationCircle,
+  faCheck,
+} from "@fortawesome/free-solid-svg-icons";
+import Modal from "react-modal";
+
+Modal.setAppElement("#___gatsby");
 
 const Layout = ({ children }) => {
+  const [formMsg, setFormMsg] = useState();
+  const [msgIcon, setMsgIcon] = useState();
+  const [modalIsOpen, setModalIsOpen] = useState();
   return (
     <>
       <NavBar />
@@ -19,9 +30,21 @@ const Layout = ({ children }) => {
               validationSchema={Yup.object({
                 email: Yup.string().email("Invalid email address"),
               })}
-              onSubmit={(values, { setSubmitting }) => {
+              onSubmit={(values, { setSubmitting, resetForm }) => {
                 setTimeout(() => {
-                  addToMailchimp(values, null, 2);
+                  addToMailchimp(values.email).then((data) => {
+                    console.log(data);
+                    if (data.result === "error") {
+                      setMsgIcon(faExclamationCircle);
+                      setFormMsg(data.msg);
+                      setModalIsOpen(true);
+                    } else if (data.result === "success") {
+                      setMsgIcon(faCheck);
+                      setFormMsg(data.msg);
+                      setModalIsOpen(true);
+                      resetForm();
+                    }
+                  });
                   setSubmitting(false);
                 }, 400);
               }}
@@ -41,7 +64,7 @@ const Layout = ({ children }) => {
                       Subscribe
                     </button>
                   </div>
-                  <div className={styles.errorContainer}>
+                  <div className={styles.messageContainer}>
                     <ErrorMessage name="email" />
                   </div>
                 </div>
@@ -50,6 +73,30 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </footer>
+      <Modal
+        isOpen={modalIsOpen}
+        className={styles.modal}
+        overlayClassName={styles.modalOverlay}
+        bodyOpenClassName={styles.modalBody}
+        contentLabel="Form Modal"
+      >
+        <div className={styles.modalContentContainer}>
+          <FontAwesomeIcon
+            icon={msgIcon}
+            size="2x"
+            className={styles.formIcon}
+          />
+          <div dangerouslySetInnerHTML={{ __html: formMsg }} />
+        </div>
+        <div className={styles.modalButtonContainer}>
+          <button
+            onClick={() => setModalIsOpen(false)}
+            className={styles.modalButton}
+          >
+            Okay
+          </button>
+        </div>
+      </Modal>
     </>
   );
 };

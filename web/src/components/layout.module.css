@@ -1,5 +1,5 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .content {
   min-height: calc(100vh - 140px);
@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: #434343;
+  background-color: var(--color-black);
   color: var(--color-white);
   margin-top: 50px;
 }
@@ -30,16 +30,17 @@
 .formWrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  
 }
 
 .inputContainer {
   margin-left: 150px;
 }
 
-.errorContainer {
-  width: 150px;
+.messageContainer {
+  padding: 0 10px 0 10px;
+  width: 300px;
 }
 
 .emailField {
@@ -63,4 +64,87 @@
   font-size: 1rem;
   padding: 5px 20px 5px 20px;
   margin-left: 10px;
+  transition: 0.4s;
+}
+
+.formButton:hover {
+  cursor: pointer;
+  background-color: #434343;
+}
+
+.formIcon {
+  margin-right: 10px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 40px 20px 20px 20px;
+  font-size: 24px;
+  line-height: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.042),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.061),
+  0 12.5px 10px rgba(0, 0, 0, 0.075),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.089),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.108),
+  0 100px 80px rgba(0, 0, 0, 0.15);
+}
+
+.modal a {
+  color: var(--color-black);
+}
+
+.modal a:hover {
+  color: #474747;
+}
+
+.modalOverlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.modalBody {
+  overflow: hidden; /* Disables scrolling on the body when the modal is active */
+}
+
+.modalContentContainer {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.modalButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalButton {
+  text-decoration: none;
+  background-color: var(--color-black);
+  border: 1px solid var(--color-black);
+  color: var(--color-white);
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  transition: 0.4s;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.modalButton:hover {
+  background: none;
+  color: var(--color-black);
 }

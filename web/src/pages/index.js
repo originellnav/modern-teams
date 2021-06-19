@@ -119,7 +119,7 @@ const IndexPage = (props) => {
       <CompanyGrid>
         {companies.map((node) => (
           <CompanyCard
-            key={node.id}
+            key={node._id}
             logoSrc={node.companyLogo}
             logoAlt={node.companyLogo.alt}
             logoCap={node.companyLogo.caption}
