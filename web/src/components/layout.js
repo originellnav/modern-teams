@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as styles from "./layout.module.css";
+import { useStaticQuery, graphql } from "gatsby";
 import "../styles/layout.css";
 import NavBar from "./navBar";
 import { Formik, Field, Form, ErrorMessage } from "formik";
@@ -15,6 +16,14 @@ import Modal from "react-modal";
 Modal.setAppElement("#___gatsby");
 
 const Layout = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      home: sanityHome {
+        formText
+      }
+    }
+  `);
+  const home = (data || {}).home;
   const [formMsg, setFormMsg] = useState();
   const [msgIcon, setMsgIcon] = useState();
   const [msgColor, setMsgColor] = useState();
@@ -55,9 +64,7 @@ const Layout = ({ children }) => {
             <Form>
               <div className={styles.formContainer}>
                 <div className={styles.inputContainer}>
-                  <span className={styles.signupText}>
-                    Sign up for the Modern Teams weekly newsletter!
-                  </span>
+                  <span className={styles.signupText}>{home.formText}</span>
                   <Field
                     id="email"
                     name="email"

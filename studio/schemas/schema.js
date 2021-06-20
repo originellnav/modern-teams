@@ -13,6 +13,7 @@ import singletonHomepage from "./documents/singletonHomepage";
 import company from "./documents/company";
 
 // Object types
+import companyLinks from "./objects/companyLinks";
 import bodyPortableText from "./objects/bodyPortableText";
 import bioPortableText from "./objects/bioPortableText";
 import excerptPortableText from "./objects/excerptPortableText";
@@ -28,6 +29,7 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    companyLinks,
     company,
     singletonHomepage,
     siteSettings,

@@ -31,10 +31,28 @@ export default {
       description: "This will show up on the company's card on the homepage.",
     },
     {
+      name: "companyHeadingBody",
+      type: "bodyPortableText",
+      title: "Heading Body",
+      description:
+        "Content typed here is displayed just below the company logo.",
+    },
+    {
+      name: "mediaArray",
+      type: "array",
+      title: "Media Links",
+      of: [
+        {
+          type: "companyLinks",
+        },
+      ],
+    },
+    {
       name: "companyBody",
       type: "bodyPortableText",
-      title: "Body",
-      description: "Content typed here is displayed on the company's page.",
+      title: "Content Body",
+      description:
+        "Content typed here is displayed below the job listing slider.",
     },
     {
       name: "categories",

@@ -24,6 +24,16 @@ export const query = graphql`
       }
       companyExcerpt
       _rawCompanyBody(resolveReferences: { maxDepth: 5 })
+      _rawCompanyHeadingBody(resolveReferences: { maxDepth: 5 })
+      mediaArray {
+        icon {
+          asset {
+            _id
+          }
+        }
+        linkDescriptor
+        url
+      }
     }
   }
 `;
