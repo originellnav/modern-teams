@@ -6,18 +6,12 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  /* height: 300px; */
-
-  /* @media (max-width: 1197px) {
-    height: 330px;
-  } */
 }
 
 .contentWrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* height: 220px; */
   padding: 16px;
 }
 
