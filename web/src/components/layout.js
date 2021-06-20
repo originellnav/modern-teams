@@ -17,6 +17,7 @@ Modal.setAppElement("#___gatsby");
 const Layout = ({ children }) => {
   const [formMsg, setFormMsg] = useState();
   const [msgIcon, setMsgIcon] = useState();
+  const [msgColor, setMsgColor] = useState();
   const [modalIsOpen, setModalIsOpen] = useState();
   return (
     <>
@@ -24,53 +25,57 @@ const Layout = ({ children }) => {
       <div className={styles.content}>{children}</div>
       <footer className={styles.footer}>
         <div className={styles.wrapper}>
-          <div className={styles.formContainer}>
-            <Formik
-              initialValues={{ email: "" }}
-              validationSchema={Yup.object({
-                email: Yup.string().email("Invalid email address"),
-              })}
-              onSubmit={(values, { setSubmitting, resetForm }) => {
-                setTimeout(() => {
-                  addToMailchimp(values.email).then((data) => {
-                    console.log(data);
-                    if (data.result === "error") {
-                      setMsgIcon(faExclamationCircle);
-                      setFormMsg(data.msg);
-                      setModalIsOpen(true);
-                    } else if (data.result === "success") {
-                      setMsgIcon(faCheck);
-                      setFormMsg(data.msg);
-                      setModalIsOpen(true);
-                      resetForm();
-                    }
-                  });
-                  setSubmitting(false);
-                }, 400);
-              }}
-            >
-              <Form>
-                <div className={styles.formWrapper}>
-                  <div className={styles.inputContainer}>
-                    <Field
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="What's your email?"
-                      className={styles.emailField}
-                    />
+          <Formik
+            initialValues={{ email: "" }}
+            validationSchema={Yup.object({
+              email: Yup.string().email("*Invalid email address"),
+            })}
+            onSubmit={(values, { setSubmitting, resetForm }) => {
+              setTimeout(() => {
+                addToMailchimp(values.email).then((data) => {
+                  console.log(data);
+                  if (data.result === "error") {
+                    setMsgIcon(faExclamationCircle);
+                    setMsgColor(styles.modalError);
+                    setFormMsg(data.msg);
+                    setModalIsOpen(true);
+                    resetForm();
+                  } else if (data.result === "success") {
+                    setMsgIcon(faCheck);
+                    setMsgColor(styles.modalSuccess);
+                    setFormMsg(data.msg);
+                    setModalIsOpen(true);
+                    resetForm();
+                  }
+                });
+                setSubmitting(false);
+              }, 400);
+            }}
+          >
+            <Form>
+              <div className={styles.formContainer}>
+                <div className={styles.inputContainer}>
+                  <span className={styles.signupText}>
+                    Sign up for the Modern Teams weekly newsletter!
+                  </span>
+                  <Field
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="email@domain.com"
+                    className={styles.emailField}
+                  />
 
-                    <button type="submit" className={styles.formButton}>
-                      Subscribe
-                    </button>
-                  </div>
-                  <div className={styles.messageContainer}>
-                    <ErrorMessage name="email" />
-                  </div>
+                  <button type="submit" className={styles.formButton}>
+                    Subscribe
+                  </button>
                 </div>
-              </Form>
-            </Formik>
-          </div>
+                <div className={styles.messageContainer}>
+                  <ErrorMessage name="email" />
+                </div>
+              </div>
+            </Form>
+          </Formik>
         </div>
       </footer>
       <Modal
@@ -80,12 +85,10 @@ const Layout = ({ children }) => {
         bodyOpenClassName={styles.modalBody}
         contentLabel="Form Modal"
       >
+        <div className={styles.modalIconContainer}>
+          <FontAwesomeIcon icon={msgIcon} size="3x" className={msgColor} />
+        </div>
         <div className={styles.modalContentContainer}>
-          <FontAwesomeIcon
-            icon={msgIcon}
-            size="2x"
-            className={styles.formIcon}
-          />
           <div dangerouslySetInnerHTML={{ __html: formMsg }} />
         </div>
         <div className={styles.modalButtonContainer}>

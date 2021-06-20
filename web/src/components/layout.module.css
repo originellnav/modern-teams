@@ -8,42 +8,63 @@
 .footer {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  background-color: var(--color-black);
+  height: 90px;
+  background-color: rgb(33, 34, 34);
   color: var(--color-white);
   margin-top: 50px;
+
+  @media (max-width: 800px) {
+    height: 200px;
+  }
 }
 
 .wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 1200px;
   height: 100%;
-  padding: 10px 0 10px 0;
   box-sizing: border-box;
 }
 
 .formContainer {
-  margin: 0 10px 0 10px;
-}
-
-.formWrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   width: 100%;
 }
 
 .inputContainer {
-  margin-left: 150px;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-around;
+  }
+}
+
+.signupText {
+  margin-right: 10px;
+  color: var(--color-gray);
+  font-weight: 700;
 }
 
 .messageContainer {
-  padding: 0 10px 0 10px;
-  width: 300px;
+  height: 20px;
+  margin-bottom: -20px;
+  color:rgb(211, 67, 91);
 }
 
 .emailField {
+  background: #2c2c2c;
+  border: 1px solid #777777;
+  border-radius: 5px;
+  color: var(--color-white);
   width: 250px;
   line-height: 1.5rem;
   font-size: 1rem;
@@ -52,14 +73,23 @@
 
 .emailField:focus {
   outline: none;
-  border-bottom: 2px solid #fff;
+}
+
+::placeholder {
+  color: var(--color-gray);
+  opacity: 0.5;
+}
+
+::-ms-input-placeholder {
+  color: var(--color-gray); /* Microsoft Edge */
+  opacity: 0.5;
 }
 
 .formButton {
-  background: none;
-  border: 1px solid #d3d3d3;
+  background: #777777;
+  color: var(--color-gray);
+  border: 1px solid #777777;
   border-radius: 5px;
-  color: #d3d3d3;
   line-height: 1.5rem;
   font-size: 1rem;
   padding: 5px 20px 5px 20px;
@@ -69,11 +99,8 @@
 
 .formButton:hover {
   cursor: pointer;
-  background-color: #434343;
-}
-
-.formIcon {
-  margin-right: 10px;
+  background: none;
+  color: var(--color-gray);
 }
 
 .modal {
@@ -81,12 +108,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
+  width: 300px;
+  outline: none; /* Removes blue border when toggled with enter key, and when opened in Safari */
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.75);
-  padding: 40px 20px 20px 20px;
-  font-size: 24px;
-  line-height: 32px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #616161;
+  font-weight: 700;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -122,29 +152,42 @@
   overflow: hidden; /* Disables scrolling on the body when the modal is active */
 }
 
-.modalContentContainer {
+.modalIconContainer {
   display: flex;
-  margin-bottom: 50px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.modalError {
+  color: rgb(211, 67, 91);
+}
+
+.modalSuccess {
+  color: rgb(59, 204, 33);
+}
+
+.modalContentContainer {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .modalButtonContainer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .modalButton {
   text-decoration: none;
-  background-color: var(--color-black);
-  border: 1px solid var(--color-black);
-  color: var(--color-white);
-  padding: 10px 20px 10px 20px;
+  border: 1px solid #616161;
+  color: var(--color-black);
+  padding: 5px 15px 5px 15px;
   border-radius: 5px;
-  transition: 0.4s;
+  transition: 0.5s;
   cursor: pointer;
   font-size: 18px;
 }
 
 .modalButton:hover {
-  background: none;
-  color: var(--color-black);
+  background: #616161;
+  color: var(--color-white);
 }

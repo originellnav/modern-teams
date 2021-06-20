@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as styles from "./navBar.module.css";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
@@ -19,7 +19,7 @@ const navBar = () => {
             />
           </Link>
         </div>
-        <nav>
+        <nav className={styles.desktopNav}>
           <Link to="/" className={styles.navLink}>
             Companies
           </Link>

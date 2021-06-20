@@ -78,10 +78,6 @@ export const query = graphql`
         }
       }
     }
-    home: sanityHome {
-      homepageHeading
-      homepageSubheading
-    }
   }
 `;
 
@@ -97,7 +93,6 @@ const IndexPage = (props) => {
   }
 
   const site = (data || {}).site;
-  const home = (data || {}).home;
   const companies = (data || {}).companies
     ? mapEdgesToNodes(data.companies)
     : [];

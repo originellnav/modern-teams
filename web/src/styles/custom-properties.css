@@ -10,7 +10,7 @@
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
-  --color-gray: #697a90;
+  --color-gray: #d3d3d3;
   --color-light-gray: #b4bcc7;
   --color-very-light-gray: #e7ebed;
   --color-white: #fff;
@@ -22,7 +22,7 @@
   --font-micro-line-height: calc(12 / 10); /* 12px */
   --font-small-size: calc(14 / var(--unit) * 1rem); /* 14px */
   --font-small-line-height: calc(21 / 14); /* 21px */
-  --font-base-size: 0.85rem;
+  --font-base-size: 16px;
   --font-base-line-height: calc(24 / var(--unit)); /* 24px */
   --font-large-size: calc(18 / var(--unit) * 1rem); /* 18px */
   --font-large-line-height: calc(27 / 18); /* 27px */

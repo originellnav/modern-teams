@@ -82,6 +82,7 @@ h2 {
   font-weight: 700;
   font-size: var(--font-fluid-large-subheading);
   line-height: var(--font-title2-line-height);
+  height: 50px;                                 /* Keeps content below from collapsing upwards between subheader animations */
 
   @media (max-width: 414px) {
     padding: 0 10px 0 10px;

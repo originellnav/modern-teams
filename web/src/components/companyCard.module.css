@@ -39,6 +39,7 @@
   text-align: center;
   font-size: 24px;
   font-weight: 700;
+  padding: 10px 0 10px 0;
 }
 
 .description {
@@ -48,7 +49,7 @@
   overflow: hidden;
   text-align: center;
   color: #616161;
-  height: 43px;
+  height: 47px;
   font-weight: 700;
 }
 
