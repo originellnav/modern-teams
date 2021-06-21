@@ -120,3 +120,19 @@ exports.createResolvers = ({ createResolvers }) => {
   };
   createResolvers(resolvers);
 };
+
+module.exports.onPreInit = () => {
+  const carouselSrcFile =
+    "node_modules/@brainhubeu/react-carousel/lib/react-carousel.js";
+
+  const fs = require("fs");
+
+  if (!fs.existsSync(carouselSrcFile)) return;
+
+  fs.writeFileSync(
+    carouselSrcFile,
+    fs
+      .readFileSync(carouselSrcFile, "utf8")
+      .replace("(window,", `(typeof window==='undefined'?{}:window,`)
+  );
+};
