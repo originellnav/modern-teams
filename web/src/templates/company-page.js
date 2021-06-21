@@ -23,7 +23,9 @@ export const query = graphql`
         current
       }
       companyExcerpt
-      _rawCompanyBody(resolveReferences: { maxDepth: 5 })
+      _rawValuesBody(resolveReferences: { maxDepth: 5 })
+      _rawPerksBenefitsBody(resolveReferences: { maxDepth: 5 })
+      _rawFurtherReadingBody(resolveReferences: { maxDepth: 5 })
       _rawCompanyHeadingBody(resolveReferences: { maxDepth: 5 })
       mediaArray {
         icon {

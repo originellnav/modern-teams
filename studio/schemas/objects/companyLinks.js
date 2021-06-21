@@ -16,7 +16,7 @@ export default {
     {
       name: "url",
       type: "url",
-      title: "Media URL",
+      title: "Link URL",
     },
   ],
   preview: {

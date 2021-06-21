@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   font-size: 15px;
-  padding-top: 50px;
+  padding-top: 23px;
 }
 
 .root p {
@@ -15,10 +15,19 @@
 
 .headingRowContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  background-color: #fff; 
+  background-color: #fff;
   padding-top: 50px;
+}
+
+.logoBackground {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 50px 0;
+  width: 100%;
+  background: #f5f5f5;
 }
 
 .headingWrapper {
@@ -26,12 +35,16 @@
   flex-direction: column;
   align-items: center;
   max-width: 900px;
-  padding: 20px 20px 0 20px;
+  margin-top: 50px;
+}
+
+.headingWrapper p {
+  margin: 0;
 }
 
 .innerWrapper {
   display: flex;
-  margin-top: 50px;
+  padding: 0 20px 0 20px;
 
   @media (max-width: 800px) {
     flex-direction: column;
@@ -40,81 +53,140 @@
 
 .headingBodyWrapper {
   padding-right: 30px;
+
+  @media (max-with: 800px) {
+    padding-right: 0;
+  }
 }
 
-.headingBodyWrapper h3 { /* Removes whitespace from above heading */
-  line-height: 18px;
+.headingBodyWrapper h2 {
+  /* Removes whitespace from above heading */
+  font-size: var(--font-fluid-article-heading);
+  line-height: 28px;
   margin: 0;
+  padding: 0;
 }
 
 .mediaLinkWrapper {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   width: 100%;
+  max-height: 200px;
   white-space: nowrap;
 
   @media (max-width: 800px) {
+    margin-top: 50px;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    padding: 10px 0 10px 0;
+    flex-wrap: wrap;
   }
 }
 
 .mediaIcon {
-  width: 20px;
-  height: 20px;
-  margin-bottom: -3px;
-  padding-right: 5px;
+  width: 15px;
+  height: 15px;
+  margin-bottom: -2px;
+  padding-right: 10px;
 }
 
 .mediaLink {
   text-decoration: none;
   color: #6b6b6b;
-  margin: 5px 0 5px 0;
+  padding: 0 5px 0 5px;
 }
 
-.categoryItemWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.categoryItem {
-  display: inline-block;
-  margin: 5px;
-  background-color: var(--color-black);
-  color: var(--color-white);
-  padding: 2px 10px 5px 10px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 700;
+.mediaLink:hover {
+  color: #DB7342;
 }
 
 .contentRowContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   background-color: #f5f5f5;
   padding: 50px 0 50px 0;
-  margin-top: 50px; 
+  margin-top: 50px;
 }
 
-.contentWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.jobCardWrapper {
   max-width: 900px;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow:
-  0 0.1px 0.4px rgba(0, 0, 0, 0.02),
-  0 0.3px 1px rgba(0, 0, 0, 0.028),
-  0 0.7px 1.9px rgba(0, 0, 0, 0.035),
-  0 1.5px 3.4px rgba(0, 0, 0, 0.042),
-  0 3.1px 6.3px rgba(0, 0, 0, 0.05),
-  0 10px 15px rgba(0, 0, 0, 0.07);
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.contentRowInnerContainer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 20px;
+  justify-content: center;
+  max-width: 900px;
   margin: 0 20px 0 20px;
 }
 
+.contentWrapper {
+  grid-column: 1 / 10;
+  display: flex;
+  flex-direction: column;
 
+  @media (max-width: 800px) {
+    grid-column: 1 / 13;
+    row: 1;
+  }
+}
+
+.contentLabel {
+  color: #666666;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.body {
+  padding: 0 20px 0 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 5px;
+  border-bottom: 2px solid #e6e6e6;
+  margin-bottom: 40px;
+}
+
+.body h3 {
+  color: #DB7342;
+  text-transform: uppercase;
+}
+
+.categoryItemWrapper {
+  grid-column: 10 / 13;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 800px) {
+    grid-column: 1 / 13;
+    row: 2;
+  }
+}
+
+.categoryItemBody {
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 5px;
+  border-bottom: 2px solid #e6e6e6;
+  height: fit-content;
+}
+
+.categoryItemWrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categoryItem {
+  color: #929292;
+  font-weight: 700;
+  font-size: 14px;
+}

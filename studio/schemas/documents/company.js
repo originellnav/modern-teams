@@ -48,11 +48,19 @@ export default {
       ],
     },
     {
-      name: "companyBody",
+      name: "valuesBody",
       type: "bodyPortableText",
-      title: "Content Body",
-      description:
-        "Content typed here is displayed below the job listing slider.",
+      title: "Values",
+    },
+    {
+      name: "perksBenefitsBody",
+      type: "bodyPortableText",
+      title: "Perks and Benefits",
+    },
+    {
+      name: "furtherReadingBody",
+      type: "bodyPortableText",
+      title: "Further Reading",
     },
     {
       name: "categories",

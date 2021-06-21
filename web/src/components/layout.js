@@ -69,7 +69,7 @@ const Layout = ({ children }) => {
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="email@domain.com"
+                    placeholder="Enter email address"
                     className={styles.emailField}
                   />
 
@@ -93,7 +93,7 @@ const Layout = ({ children }) => {
         contentLabel="Form Modal"
       >
         <div className={styles.modalIconContainer}>
-          <FontAwesomeIcon icon={msgIcon} size="3x" className={msgColor} />
+          <FontAwesomeIcon icon={msgIcon} size="4x" className={msgColor} />
         </div>
         <div className={styles.modalContentContainer}>
           <div dangerouslySetInnerHTML={{ __html: formMsg }} />

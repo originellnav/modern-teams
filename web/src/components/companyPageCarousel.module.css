@@ -1,0 +1,9 @@
+.jobCarousel {
+  max-width: 100%;
+}
+
+.carouselButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
