@@ -11,6 +11,7 @@ import post from "./documents/post";
 import siteSettings from "./documents/siteSettings";
 import singletonHomepage from "./documents/singletonHomepage";
 import company from "./documents/company";
+import singletonAbout from "./documents/singletonAbout";
 
 // Object types
 import companyLinks from "./objects/companyLinks";
@@ -32,6 +33,7 @@ export default createSchema({
     companyLinks,
     company,
     singletonHomepage,
+    singletonAbout,
     siteSettings,
     post,
     category,

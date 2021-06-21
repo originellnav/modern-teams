@@ -61,7 +61,7 @@
 
 .emailField {
   background: #2c2c2c;
-  border: 1px solid #777777;
+  border: 1px solid #d6d6d6;
   border-radius: 5px;
   color: var(--color-white);
   width: 250px;
@@ -109,9 +109,8 @@
   transform: translate(-50%, -50%);
   width: 300px;
   outline: none; /* Removes blue border when toggled with enter key, and when opened in Safari */
-  border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 40px;
+  padding: 20px;
   font-size: 16px;
   line-height: 24px;
   color: #616161;
@@ -119,17 +118,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.042),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.061),
-  0 12.5px 10px rgba(0, 0, 0, 0.075),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.089),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.108),
-  0 100px 80px rgba(0, 0, 0, 0.15);
 }
 
 .modal a {
-  color: var(--color-black);
+  text-decoration: none;
+  color: #1a66c8;
 }
 
 .modal a:hover {
@@ -154,11 +147,11 @@
 .modalIconContainer {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .modalError {
-  color: rgb(211, 67, 91);
+  color: rgb(0, 0, 0);
 }
 
 .modalSuccess {
@@ -167,7 +160,7 @@
 
 .modalContentContainer {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .modalButtonContainer {
@@ -177,9 +170,11 @@
 
 .modalButton {
   text-decoration: none;
-  border: 1px solid #616161;
-  color: var(--color-black);
-  padding: 5px 15px 5px 15px;
+  border: 1px solid var(--color-black);
+  color: var(--color-white);
+  background: var(--color-black);
+  padding: 5px 25px 5px 25px;
+  width: 75%;
   border-radius: 5px;
   transition: 0.5s;
   cursor: pointer;
@@ -187,6 +182,6 @@
 }
 
 .modalButton:hover {
-  background: #616161;
-  color: var(--color-white);
+  background: none;
+  color: var(--color-black);
 }

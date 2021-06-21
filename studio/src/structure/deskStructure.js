@@ -56,6 +56,15 @@ export default () =>
             .documentId("singletonHomepage")
         ),
       S.listItem()
+        .title("About Page")
+        .icon(MdHome)
+        .child(
+          S.editor()
+            .id("about")
+            .schemaType("about")
+            .documentId("singletonAbout")
+        ),
+      S.listItem()
         .title("Company Entries")
         .icon(MdDescription)
         .schemaType("company")
@@ -97,6 +106,7 @@ export default () =>
             "post",
             "siteSettings",
             "home",
+            "about",
             "company",
           ].includes(listItem.getId())
       ),
