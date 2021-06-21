@@ -8,8 +8,10 @@ import PortableText from "./portableText";
 import { Link } from "gatsby";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
-import CompanyPageCarousel from "./companyPageCarousel";
 import JobCard from "./jobCard";
+import loadable from "@loadable/component";
+
+const CompanyPageCarousel = loadable(() => import("./companyPageCarousel"));
 
 const companyPage = (props) => {
   const {
