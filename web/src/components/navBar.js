@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import * as styles from "./navBar.module.css";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
@@ -12,7 +12,7 @@ const navBar = () => {
         <div>
           <Link to="/">
             <StaticImage
-              src="../images/logo.png"
+              src="../images/tentativeLogo.png"
               alt="Modern Teams Logo"
               height={40}
               placeholder="blurred"
