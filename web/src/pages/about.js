@@ -1,13 +1,30 @@
 import React from "react";
+import * as styles from "./about.module.css";
 import SEO from "../components/seo";
+import { graphql } from "gatsby";
 import Container from "../components/container";
+import PortableText from "../components/portableText";
 
-const about = () => {
+export const query = graphql`
+  query AboutPageQuery {
+    about: sanityAbout {
+      title
+      _rawAboutBody
+    }
+  }
+`;
+
+const about = (props) => {
+  const { data } = props;
+  const about = (data || {}).about;
+
   return (
     <>
-      <SEO title="Get Listed" />
+      <SEO title={about.title} />
       <Container>
-        <h1>About page coming soon</h1>
+        <div className={styles.root}>
+          {about._rawAboutBody && <PortableText blocks={about._rawAboutBody} />}
+        </div>
       </Container>
     </>
   );
