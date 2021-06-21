@@ -1,10 +1,10 @@
 import React from "react";
 import * as styles from "./companyPage.module.css";
 import SEO from "./seo";
-import PortableText from "./portableText";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { getGatsbyImageData } from "gatsby-source-sanity";
 import clientConfig from "../../client-config";
+import PortableText from "./portableText";
 import { Link } from "gatsby";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
