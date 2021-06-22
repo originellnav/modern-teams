@@ -27,7 +27,7 @@ export const getDefaultDocumentNode = (props) => {
    * https://www.sanity.io/docs/structure-builder-reference#getdefaultdocumentnode-97e44ce262c9
    */
   const { schemaType } = props;
-  if (schemaType == "post" || schemaType == "company") {
+  if (schemaType == "company") {
     return S.document().views([
       S.view.form().icon(EditIcon),
       S.view

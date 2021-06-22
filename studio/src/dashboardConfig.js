@@ -45,9 +45,9 @@ export default {
     {
       name: "document-list",
       options: {
-        title: "Recent Blog Posts",
+        title: "Recent Company Entries",
         order: "_createdAt desc",
-        types: ["post"],
+        types: ["company"],
       },
       layout: { width: "medium" },
     },
