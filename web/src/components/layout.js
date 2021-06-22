@@ -65,17 +65,19 @@ const Layout = ({ children }) => {
               <div className={styles.formContainer}>
                 <div className={styles.inputContainer}>
                   <span className={styles.signupText}>{home.formText}</span>
-                  <Field
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="Enter email address"
-                    className={styles.emailField}
-                  />
+                  <div className={styles.inputAndButtonWrapper}>
+                    <Field
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="Enter email address"
+                      className={styles.emailField}
+                    />
 
-                  <button type="submit" className={styles.formButton}>
-                    Subscribe
-                  </button>
+                    <button type="submit" className={styles.formButton}>
+                      Subscribe
+                    </button>
+                  </div>
                 </div>
                 <div className={styles.messageContainer}>
                   <ErrorMessage name="email" />

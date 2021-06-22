@@ -1,6 +1,10 @@
 @import "../styles/custom-media.css";
 @import "../styles/custom-properties.css";
 
+* {
+  overflow: visible;
+}
+
 .root {
   display: flex;
   flex-direction: column;
@@ -115,6 +119,14 @@
   max-width: 900px;
   width: 100%;
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.jobCardWrapper .contentLabel {
+  @media(max-width: 800px) {
+    margin-left: 20px;
+  }
 }
 
 .contentRowInnerContainer {
@@ -124,6 +136,10 @@
   justify-content: center;
   max-width: 900px;
   margin: 0 20px 0 20px;
+
+  @media (max-width: 800px) {
+    margin: 0;
+  }
 }
 
 .contentWrapper {
@@ -143,6 +159,10 @@
   text-transform: uppercase;
   font-size: 11px;
   margin-bottom: 10px;
+
+  @media (max-width: 800px) {
+    margin-left: 20px;
+  }
 }
 
 .body {
@@ -157,6 +177,10 @@
 .body h3 {
   color: #DB7342;
   text-transform: uppercase;
+}
+
+.body figure {
+ margin: 0;
 }
 
 .categoryItemWrapper {

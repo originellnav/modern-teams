@@ -11,7 +11,9 @@ import { imageUrlFor } from "../lib/image-url";
 import JobCard from "./jobCard";
 import loadable from "@loadable/component";
 
-const CompanyPageCarousel = loadable(() => import("./companyPageCarousel"));
+const CompanyPageCarousel = loadable(() =>
+  import("./companyPageCarousel")
+); /* Running companyPageCarousel through loadable fixes Netlify build fail due to SSR complication */
 
 const companyPage = (props) => {
   const {
@@ -73,6 +75,9 @@ const companyPage = (props) => {
         </section>
         <section className={styles.contentRowContainer}>
           <article className={styles.jobCardWrapper}>
+            <div className={styles.contentLabel}>
+              Job Openings at {companyName}
+            </div>
             <CompanyPageCarousel>
               <JobCard />
               <JobCard />

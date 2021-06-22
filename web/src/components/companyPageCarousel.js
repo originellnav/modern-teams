@@ -13,7 +13,6 @@ const companyPageCarousel = ({ children }) => {
     <Carousel
       className={styles.jobCarousel}
       plugins={[
-        "centered",
         "infinite",
         {
           resolve: slidesToShowPlugin,
@@ -25,12 +24,12 @@ const companyPageCarousel = ({ children }) => {
           resolve: arrowsPlugin,
           options: {
             arrowLeft: (
-              <button className={styles.carouselButton}>
+              <button className={styles.carouselButtonLeft}>
                 <FontAwesomeIcon icon={faAngleLeft} size="2x" />
               </button>
             ),
             arrowRight: (
-              <button className={styles.carouselButton}>
+              <button className={styles.carouselButtonRight}>
                 <FontAwesomeIcon icon={faAngleRight} size="2x" />
               </button>
             ),

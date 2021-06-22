@@ -1,6 +1,7 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { MdSettings } from "react-icons/md";
-import { MdPerson, MdDescription, MdLocalOffer, MdHome } from "react-icons/md";
+import { MdPerson, MdDescription, MdLocalOffer } from "react-icons/md";
+import { FcHome, FcBusinessman, FcAcceptDatabase, FcDocument, FcSettings, FcList, FcSignature } from "react-icons/fc";
 import EyeIcon from "part:@sanity/base/eye-icon";
 import EditIcon from "part:@sanity/base/edit-icon";
 import IframePreview from "../previews/IframePreview";
@@ -48,7 +49,7 @@ export default () =>
     .items([
       S.listItem()
         .title("Homepage")
-        .icon(MdHome)
+        .icon(FcHome)
         .child(
           S.editor()
             .id("home")
@@ -57,7 +58,7 @@ export default () =>
         ),
       S.listItem()
         .title("About Page")
-        .icon(MdHome)
+        .icon(FcBusinessman)
         .child(
           S.editor()
             .id("about")
@@ -66,29 +67,29 @@ export default () =>
         ),
       S.listItem()
         .title("Company Entries")
-        .icon(MdDescription)
+        .icon(FcAcceptDatabase)
         .schemaType("company")
         .child(S.documentTypeList("company").title("Company Entries")),
       S.listItem()
-        .title("Blog posts")
-        .icon(MdDescription)
+        .title("Blog")
+        .icon(FcDocument)
         .schemaType("post")
-        .child(S.documentTypeList("post").title("Blog posts")),
+        .child(S.documentTypeList("post").title("Blog Posts")),
       S.divider(),
       S.listItem()
         .title("Categories")
-        .icon(MdLocalOffer)
+        .icon(FcList)
         .schemaType("category")
         .child(S.documentTypeList("category").title("Categories")),
       S.listItem()
         .title("Authors")
-        .icon(MdPerson)
+        .icon(FcSignature)
         .schemaType("author")
         .child(S.documentTypeList("author").title("Authors")),
       S.divider(),
       S.listItem()
         .title("Settings")
-        .icon(MdSettings)
+        .icon(FcSettings)
         .child(
           S.editor()
             .id("siteSettings")

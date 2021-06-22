@@ -1,8 +1,19 @@
 .jobCarousel {
   max-width: 100%;
+  margin: 0 -5px 0 -5px;
 }
 
-.carouselButton {
+.carouselButtonLeft {
+  position: absolute;
+  margin-left: -30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.carouselButtonRight {
+  position: absolute;
+  margin-right: -100px;
   border: none;
   background: none;
   cursor: pointer;
