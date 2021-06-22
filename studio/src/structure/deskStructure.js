@@ -1,7 +1,13 @@
 import S from "@sanity/desk-tool/structure-builder";
-import { MdSettings } from "react-icons/md";
-import { MdPerson, MdDescription, MdLocalOffer } from "react-icons/md";
-import { FcHome, FcBusinessman, FcAcceptDatabase, FcDocument, FcSettings, FcList, FcSignature } from "react-icons/fc";
+import {
+  FcHome,
+  FcBusinessman,
+  FcAcceptDatabase,
+  FcDocument,
+  FcSettings,
+  FcList,
+  FcSignature,
+} from "react-icons/fc";
 import EyeIcon from "part:@sanity/base/eye-icon";
 import EditIcon from "part:@sanity/base/edit-icon";
 import IframePreview from "../previews/IframePreview";
