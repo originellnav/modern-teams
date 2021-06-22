@@ -13,7 +13,7 @@ import EditIcon from "part:@sanity/base/edit-icon";
 import IframePreview from "../previews/IframePreview";
 
 // Web preview configuration
-const remoteURL = "https://preview-modernteams.gtsb.io";
+const remoteURL = "preview-modernteams.gtsb.io";
 const localURL = "http://localhost:8000";
 const previewURL =
   window.location.hostname === "localhost" ? localURL : remoteURL;
