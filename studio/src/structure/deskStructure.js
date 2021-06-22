@@ -13,7 +13,8 @@ import EditIcon from "part:@sanity/base/edit-icon";
 import IframePreview from "../previews/IframePreview";
 
 // Web preview configuration
-const remoteURL = "https://modern-teams-web.netlify.app";
+const remoteURL =
+  "https://webhook.gatsbyjs.com/hooks/data_source/6551b807-a39f-455d-bc38-89ba20ce0d09";
 const localURL = "http://localhost:8000";
 const previewURL =
   window.location.hostname === "localhost" ? localURL : remoteURL;

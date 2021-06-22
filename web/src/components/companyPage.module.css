@@ -177,10 +177,16 @@
 .body h3 {
   color: #DB7342;
   text-transform: uppercase;
+  margin-bottom: -15px;
 }
 
 .body figure {
  margin: 0;
+ padding: 10px 0 10px 0;
+}
+
+.body p {
+  padding: 10px 0 10px 0;
 }
 
 .categoryItemWrapper {

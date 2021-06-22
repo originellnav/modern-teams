@@ -3,7 +3,7 @@ import HomeHeader from "./homeHeader";
 import CompanyGrid from "./companyGrid";
 import CompanyCard from "./companyCard";
 
-const categoryPage = ({ companies }) => {
+const CategoryPage = ({ companies }) => {
   return (
     <>
       <HomeHeader />
@@ -24,4 +24,4 @@ const categoryPage = ({ companies }) => {
   );
 };
 
-export default categoryPage;
+export default CategoryPage;

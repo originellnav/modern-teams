@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-const navBar = () => {
+const NavBar = () => {
   return (
     <div className={styles.root}>
       <div className={styles.wrapper}>
@@ -41,4 +41,4 @@ const navBar = () => {
   );
 };
 
-export default navBar;
+export default NavBar;

@@ -6,7 +6,7 @@ import clientConfig from "../../client-config";
 import { Link } from "gatsby";
 import { getCompanyUrl } from "../lib/helpers";
 
-const companyCard = ({
+const CompanyCard = ({
   logoSrc,
   logoAlt,
   logoCap,
@@ -46,4 +46,4 @@ const companyCard = ({
   );
 };
 
-export default companyCard;
+export default CompanyCard;

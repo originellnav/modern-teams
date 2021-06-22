@@ -14,7 +14,7 @@ export const query = graphql`
   }
 `;
 
-const about = (props) => {
+const About = (props) => {
   const { data } = props;
   const about = (data || {}).about;
 
@@ -30,4 +30,4 @@ const about = (props) => {
   );
 };
 
-export default about;
+export default About;

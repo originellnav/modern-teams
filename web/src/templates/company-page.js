@@ -40,7 +40,7 @@ export const query = graphql`
   }
 `;
 
-const companyPageTemplate = (props) => {
+const CompanyPageTemplate = (props) => {
   const { data, errors } = props;
   const company = data && data.company;
 
@@ -66,4 +66,4 @@ const companyPageTemplate = (props) => {
   );
 };
 
-export default companyPageTemplate;
+export default CompanyPageTemplate;

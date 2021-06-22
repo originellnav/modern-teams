@@ -28,7 +28,7 @@ export const query = graphql`
   }
 `;
 
-const categoryPageTemplate = (props) => {
+const CategoryPageTemplate = (props) => {
   const { data, errors } = props;
   const category = data && data.category;
 
@@ -53,4 +53,4 @@ const categoryPageTemplate = (props) => {
   );
 };
 
-export default categoryPageTemplate;
+export default CategoryPageTemplate;

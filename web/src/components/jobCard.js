@@ -2,7 +2,7 @@ import React from "react";
 import * as styles from "./jobCard.module.css";
 import { Link } from "gatsby";
 
-const jobCard = () => {
+const JobCard = () => {
   return (
     <article className={styles.root}>
       <h4>Company Name</h4>
@@ -18,4 +18,4 @@ const jobCard = () => {
   );
 };
 
-export default jobCard;
+export default JobCard;

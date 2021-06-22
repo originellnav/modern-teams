@@ -6,7 +6,7 @@ import { Link } from "gatsby";
 import { getCategoryUrl } from "../lib/helpers";
 import Typed from "typed.js";
 
-const homeHeader = () => {
+const HomeHeader = () => {
   const data = useStaticQuery(graphql`
     query {
       categories: allSanityCategory(sort: { order: ASC, fields: title }) {
@@ -87,4 +87,4 @@ const homeHeader = () => {
   );
 };
 
-export default homeHeader;
+export default HomeHeader;

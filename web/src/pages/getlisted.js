@@ -2,7 +2,7 @@ import React from "react";
 import SEO from "../components/seo";
 import Container from "../components/container";
 
-const getlisted = () => {
+const Getlisted = () => {
   return (
     <>
       <SEO title="Get Listed" />
@@ -13,4 +13,4 @@ const getlisted = () => {
   );
 };
 
-export default getlisted;
+export default Getlisted;

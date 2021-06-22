@@ -8,7 +8,7 @@ import "@brainhubeu/react-carousel/lib/style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-const companyPageCarousel = ({ children }) => {
+const CompanyPageCarousel = ({ children }) => {
   return (
     <Carousel
       className={styles.jobCarousel}
@@ -81,4 +81,4 @@ const companyPageCarousel = ({ children }) => {
   );
 };
 
-export default companyPageCarousel;
+export default CompanyPageCarousel;

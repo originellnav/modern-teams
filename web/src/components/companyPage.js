@@ -15,7 +15,7 @@ const CompanyPageCarousel = loadable(() =>
   import("./companyPageCarousel")
 ); /* Running companyPageCarousel through loadable fixes Netlify build fail due to SSR complication */
 
-const companyPage = (props) => {
+const CompanyPage = (props) => {
   const {
     _rawValuesBody,
     _rawPerksBenefitsBody,
@@ -123,4 +123,4 @@ const companyPage = (props) => {
   );
 };
 
-export default companyPage;
+export default CompanyPage;
