@@ -3,10 +3,11 @@ import {
   FcHome,
   FcBusinessman,
   FcAcceptDatabase,
-  FcDocument,
+  FcParallelTasks,
   FcSettings,
   FcList,
   FcSignature,
+  FcLink,
 } from "react-icons/fc";
 import EyeIcon from "part:@sanity/base/eye-icon";
 import EditIcon from "part:@sanity/base/edit-icon";
@@ -77,10 +78,11 @@ export default () =>
         .schemaType("company")
         .child(S.documentTypeList("company").title("Company Entries")),
       S.listItem()
-        .title("Blog")
-        .icon(FcDocument)
-        .schemaType("post")
-        .child(S.documentTypeList("post").title("Blog Posts")),
+        .title("Footer")
+        .icon(FcParallelTasks)
+        .child(
+          S.editor().id("footer").schemaType("footer").documentId("footer")
+        ),
       S.divider(),
       S.listItem()
         .title("Categories")
@@ -92,6 +94,11 @@ export default () =>
         .icon(FcSignature)
         .schemaType("author")
         .child(S.documentTypeList("author").title("Authors")),
+      S.listItem()
+        .title("Navigation")
+        .icon(FcLink)
+        .schemaType("nav")
+        .child(S.documentTypeList("nav").title("Navigation Schemas")),
       S.divider(),
       S.listItem()
         .title("Settings")
@@ -108,6 +115,8 @@ export default () =>
       ...S.documentTypeListItems().filter(
         (listItem) =>
           ![
+            "footer",
+            "nav",
             "category",
             "author",
             "post",

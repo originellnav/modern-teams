@@ -23,7 +23,8 @@ export default {
     {
       name: "navItems",
       type: "array",
-      title: "Navigation items",
+      title: "Navigation Items",
+      description: "Add, delete, edit, and re-order nav items.",
       of: [{ type: "navItem" }],
     },
   ],

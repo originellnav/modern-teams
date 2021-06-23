@@ -77,6 +77,7 @@
   margin-bottom: -20px;
   color:rgb(211, 67, 91);
   width: 100%;
+  line-height: 14px;
 
   @media (max-width: 800px) {
     height: 45px;
@@ -88,7 +89,7 @@
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
-  padding-top: 12px;
+  align-items: center;
 }
 
 .emailField {
@@ -100,6 +101,7 @@
   line-height: 1.5rem;
   font-size: 1rem;
   padding: 5px;
+  margin-top: 11px;
 }
 
 .emailField:focus {
@@ -119,6 +121,7 @@
 .formButton {
   background: #d6d6d6;
   color: #434343;
+  font-weight: 400;
   border: 1px solid #d6d6d6;
   border-radius: 5px;
   line-height: 1.5rem;
@@ -136,25 +139,32 @@
 
 .iconContainer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
-  max-width: 100px;
+  max-width: 300px;
   padding: 0 20px 0 20px;
+  white-space: nowrap;
 
   @media (max-width: 500px) {
     margin-top: 20px;
   }
 }
 
-.iconContainer a {
-  color: #d6d6d6;
+.socialIcon {
+  background-color: #d6d6d6;
+  border: 1px solid #d6d6d6;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+  margin-left: 10px;
   transition: 0.4s;
 }
 
-.iconContainer a:hover {
-  color: var(--color-white);
+.socialIcon:hover {
+  background-color: var(--color-white);
 }
 
 .modal {

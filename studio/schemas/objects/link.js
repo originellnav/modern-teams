@@ -5,14 +5,21 @@ export default {
   fields: [
     {
       name: "externalContent",
-      title: "Content is from an external source",
+      description: "IMPORTANT",
+      title:
+        "Click to green position if this link is to an external (non-Modern Teams website) source.",
+      type: "boolean",
+    },
+    {
+      name: "callToAction",
+      title: "Click to green position if this link is a Call To Action.",
       type: "boolean",
     },
     {
       name: "linkUrl",
       title: "Link URL",
       description:
-        "Use this field to add a link to the source. For external links use full url e.g. ‘https://google.com/’. For internal links use the page path e.g. ‘companies’",
+        "For external links use full URL e.g. ‘https://google.com/’. For internal links use the page path e.g. ‘/about/’",
       type: "string",
     },
   ],

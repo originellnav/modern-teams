@@ -19,6 +19,7 @@ const NavBar = () => {
                   navItemUrl {
                     linkUrl
                     externalContent
+                    callToAction
                   }
                 }
               }
@@ -58,7 +59,11 @@ const NavBar = () => {
                           ) : (
                             <Link
                               to={navItems.navItemUrl.linkUrl}
-                              className={styles.navLink}
+                              className={
+                                navItems.navItemUrl.callToAction
+                                  ? styles.button
+                                  : styles.navLink
+                              }
                             >
                               {navItems.text}
                             </Link>

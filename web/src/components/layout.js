@@ -11,20 +11,32 @@ import {
   faExclamationCircle,
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Modal from "react-modal";
+import { buildImageObj } from "../lib/helpers";
+import { imageUrlFor } from "../lib/image-url";
 
 Modal.setAppElement("#___gatsby");
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
-      home: sanityHome {
+      footer: sanityFooter {
         formText
+        socialItems {
+          icon {
+            asset {
+              _id
+            }
+          }
+          title
+          url
+          _key
+        }
       }
     }
   `);
-  const home = (data || {}).home;
+
+  const footer = (data || {}).footer;
   const [formMsg, setFormMsg] = useState();
   const [msgIcon, setMsgIcon] = useState();
   const [msgColor, setMsgColor] = useState();
@@ -65,7 +77,7 @@ const Layout = ({ children }) => {
             <Form>
               <div className={styles.formContainer}>
                 <div className={styles.inputContainer}>
-                  <span className={styles.signupText}>{home.formText}</span>
+                  <span className={styles.signupText}>{footer.formText}</span>
                   <div className={styles.inputAndButtonWrapper}>
                     <Field
                       id="email"
@@ -87,12 +99,19 @@ const Layout = ({ children }) => {
             </Form>
           </Formik>
           <article className={styles.iconContainer}>
-            <a href="#">
-              <FontAwesomeIcon icon={faFacebook} size="2x" />
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faTwitter} size="2x" />
-            </a>
+            {footer.socialItems.map((socialItem) => (
+              <span key={socialItem._key}>
+                <a href={socialItem.url}>
+                  <img
+                    src={imageUrlFor(buildImageObj(socialItem.icon))
+                      .width(20)
+                      .height(20)
+                      .auto("format")}
+                    className={styles.socialIcon}
+                  />
+                </a>
+              </span>
+            ))}
           </article>
         </div>
       </footer>
