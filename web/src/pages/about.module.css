@@ -11,8 +11,29 @@
   height: 300px;
 }
 
-.headerPic {
+.imageWrapper {
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
+  -khtml-border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.imageWrapper img {    /* To make image round in safari, both the image and container are required to be rounded */
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+  vertical-align: middle;
+}
+
+.headerPic {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+  vertical-align: middle;
 }
 
 .mainBackground {
@@ -32,8 +53,9 @@
 }
 
 .mainContent h2 {
-  font-size: var(--font-fluid-article-heading);
-  margin: 10px 0 0 0;
+  font-size: var(--font-title2-size);
+  line-height: var(--font-title2-line-height);
+  margin: 10px 0 20px 0;
 }
 
 .mainContent p {

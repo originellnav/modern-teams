@@ -23,10 +23,12 @@ const About = (props) => {
       <SEO title={about.title} />
       <main className={styles.root}>
         <section className={styles.imageRow}>
-          <StaticImage
-            src="../images/lukepic.jpeg"
-            className={styles.headerPic}
-          />
+          <span className={styles.imageWrapper}>
+            <StaticImage
+              src="../images/lukepic.jpeg"
+              className={styles.headerPic}
+            />
+          </span>
         </section>
         <section className={styles.mainBackground}>
           <article className={styles.mainContent}>

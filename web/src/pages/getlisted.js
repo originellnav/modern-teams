@@ -33,13 +33,13 @@ const Getlisted = () => {
         <Formik
           initialValues={{}}
           validationSchema={Yup.object({
-            companyName: Yup.string().required("Required"),
-            website: Yup.string().required("Required"),
+            companyName: Yup.string().required("*Required"),
+            website: Yup.string().required("*Required"),
             email: Yup.string()
-              .required("Required")
+              .required("*Required")
               .email("*Invalid email address"),
-            jobOpenings: Yup.string().required("Required"),
-            values: Yup.string().required("Required"),
+            jobOpenings: Yup.string().required("*Required"),
+            values: Yup.string().required("*Required"),
           })}
           onSubmit={(values, { setSubmitting, resetForm }) => {
             fetch("/", {
@@ -48,11 +48,11 @@ const Getlisted = () => {
               body: encode({ "form-name": "subscribe-form", ...values }),
             })
               .then(() => {
-                resetForm();
                 setMsgIcon(faCheck);
                 setMsgColor(styles.modalSuccess);
                 setFormMsg("Success");
                 setModalIsOpen(true);
+                resetForm(true);
               })
               .catch(() => {
                 setMsgIcon(faExclamationCircle);

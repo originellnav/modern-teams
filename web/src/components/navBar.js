@@ -58,7 +58,7 @@ const NavBar = () => {
                           ) : (
                             <Link
                               to={navItems.navItemUrl.linkUrl}
-                              className={navItems.navItemUrl.}
+                              className={styles.navLink}
                             >
                               {navItems.text}
                             </Link>

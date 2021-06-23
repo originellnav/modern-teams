@@ -5,16 +5,29 @@
 
 .carouselButtonLeft {
   position: absolute;
-  margin-left: -30px;
   border: none;
   background: none;
   cursor: pointer;
+  color: #000;
+  z-index: 10;
 }
 
 .carouselButtonRight {
   position: absolute;
-  margin-right: -100px;
   border: none;
   background: none;
   cursor: pointer;
+  color: #000;
+}
+
+.leftIcon {
+  position: absolute;
+  left: -30px;
+  top: -10px;
+}
+
+.rightIcon {
+  position: absolute;
+  right: 70px;
+  top: -10px;
 }

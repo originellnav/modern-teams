@@ -25,12 +25,20 @@ const CompanyPageCarousel = ({ children }) => {
           options: {
             arrowLeft: (
               <button className={styles.carouselButtonLeft}>
-                <FontAwesomeIcon icon={faAngleLeft} size="2x" />
+                <FontAwesomeIcon
+                  icon={faAngleLeft}
+                  size="2x"
+                  className={styles.leftIcon}
+                />
               </button>
             ),
             arrowRight: (
               <button className={styles.carouselButtonRight}>
-                <FontAwesomeIcon icon={faAngleRight} size="2x" />
+                <FontAwesomeIcon
+                  icon={faAngleRight}
+                  size="2x"
+                  className={styles.rightIcon}
+                />
               </button>
             ),
             addArrowClickHandler: true,

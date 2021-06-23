@@ -11,6 +11,7 @@ import {
   faExclamationCircle,
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Modal from "react-modal";
 
 Modal.setAppElement("#___gatsby");
@@ -85,6 +86,14 @@ const Layout = ({ children }) => {
               </div>
             </Form>
           </Formik>
+          <article className={styles.iconContainer}>
+            <a href="#">
+              <FontAwesomeIcon icon={faFacebook} size="2x" />
+            </a>
+            <a href="#">
+              <FontAwesomeIcon icon={faTwitter} size="2x" />
+            </a>
+          </article>
         </div>
       </footer>
       <Modal

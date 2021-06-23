@@ -4,6 +4,10 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+
+  @media (max-width: 800px) {
+    padding: 100px 0 100px 0;
+  }
 }
 
 .formHeading {
@@ -43,7 +47,6 @@ p {
 .errorMessage {
   font-size: 12px;
   color: red;
-  font-weight: 700;
   line-height: 25px;
 }
 
@@ -70,6 +73,7 @@ select {
 
 textarea {
   margin-bottom: 10px;
+  padding: 10px;
   height: 200px;
 }
 

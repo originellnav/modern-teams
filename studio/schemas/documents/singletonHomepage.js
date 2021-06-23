@@ -5,6 +5,12 @@ export default {
   __experimental_actions: ["update", /* 'create', 'delete', */ "publish"],
   fields: [
     {
+      title: "title",
+      name: "title",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: "Heading",
       name: "homepageHeading",
       type: "string",

@@ -15,7 +15,7 @@
   color: var(--color-white);
 
   @media (max-width: 800px) {
-    height: 150px;
+    height: 200px;
   }
 }
 
@@ -26,6 +26,11 @@
   width: 1200px;
   height: 100%;
   box-sizing: border-box;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    padding: 25px;
+  }
 }
 
 .formContainer {
@@ -56,8 +61,11 @@
   color: var(--color-gray);
   font-weight: 700;
   width: 100%;
+  white-space: nowrap;
 
   @media (max-width: 800px) {
+    font-size: 14px;
+    white-space: initial;
     margin-right: 0;
     text-align: center;
   }
@@ -72,6 +80,7 @@
 
   @media (max-width: 800px) {
     height: 45px;
+    text-align: left;
   }
 }
 
@@ -123,6 +132,29 @@
   cursor: pointer;
   background: none;
   color: var(--color-gray);
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 100px;
+  padding: 0 20px 0 20px;
+
+  @media (max-width: 500px) {
+    margin-top: 20px;
+  }
+}
+
+.iconContainer a {
+  color: #d6d6d6;
+  transition: 0.4s;
+}
+
+.iconContainer a:hover {
+  color: var(--color-white);
 }
 
 .modal {

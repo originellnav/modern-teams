@@ -73,8 +73,24 @@
 
 .headingBodyWrapper h1 {
   /* Removes whitespace from above heading */
-  font-size: var(--font-fluid-article-heading);
-  line-height: 28px;
+  font-size: var(--font-title1-size);
+  line-height: var(--font-title1-line-height);
+  margin: 0;
+  padding: 0;
+}
+
+.headingBodyWrapper h2 {
+  /* Removes whitespace from above heading */
+  font-size: var(--font-title2-size);
+  line-height: var(--font-title2-line-height);
+  margin: 0;
+  padding: 0;
+}
+
+.headingBodyWrapper h3 {
+  /* Removes whitespace from above heading */
+  font-size: var(--font-title3-size);
+  line-height: var(--font-title3-line-height);
   margin: 0;
   padding: 0;
 }
@@ -189,12 +205,16 @@
 .body h2 {
   color: #DB7342;
   text-transform: uppercase;
+  font-size: var(--font-title2-size);
+  line-height: var(--font-title2-line-height);
   margin-bottom: -15px;
 }
 
 .body h3 {
   color: #DB7342;
   text-transform: uppercase;
+  font-size: var(--font-title3-size);
+  line-height: var(--font-title3-line-height);
   margin-bottom: -15px;
 }
 

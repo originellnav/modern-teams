@@ -5,6 +5,7 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // document schemas
+import nav from "./documents/nav";
 import author from "./documents/author";
 import category from "./documents/category";
 import post from "./documents/post";
@@ -14,6 +15,8 @@ import company from "./documents/company";
 import singletonAbout from "./documents/singletonAbout";
 
 // Object types
+import link from "./objects/link";
+import navItem from "./objects/navItem";
 import companyLinks from "./objects/companyLinks";
 import bodyPortableText from "./objects/bodyPortableText";
 import bioPortableText from "./objects/bioPortableText";
@@ -30,6 +33,9 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    link,
+    navItem,
+    nav,
     companyLinks,
     company,
     singletonHomepage,
