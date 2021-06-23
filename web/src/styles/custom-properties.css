@@ -35,5 +35,5 @@
   --font-title1-line-height: calc(50 / 49);
   --font-fluid-large-heading: calc(32px + 30 * ((100vw - 320px) / 1180));
   --font-fluid-large-subheading: calc(22px + 20 * ((100vw - 320px) / 1180));
-  --font-fluid-article-heading: calc(18px + 8 * ((100vw - 320px) / 1180));
+  --font-fluid-article-heading: calc(18px + 24 * ((100vw - 320px) / 1180));
 }

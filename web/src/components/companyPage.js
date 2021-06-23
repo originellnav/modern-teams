@@ -5,7 +5,6 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { getGatsbyImageData } from "gatsby-source-sanity";
 import clientConfig from "../../client-config";
 import PortableText from "./portableText";
-import { Link } from "gatsby";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import JobCard from "./jobCard";
@@ -57,7 +56,7 @@ const CompanyPage = (props) => {
               <aside className={styles.mediaLinkWrapper}>
                 {mediaArray.map((node, index) => (
                   <span key={index}>
-                    <Link to={node.url} className={styles.mediaLink}>
+                    <a href={node.url} className={styles.mediaLink}>
                       <img
                         src={imageUrlFor(buildImageObj(node.icon))
                           .width(20)
@@ -66,7 +65,7 @@ const CompanyPage = (props) => {
                         className={styles.mediaIcon}
                       />
                       {node.linkDescriptor}
-                    </Link>
+                    </a>
                   </span>
                 ))}
               </aside>

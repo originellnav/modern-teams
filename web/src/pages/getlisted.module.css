@@ -1,0 +1,178 @@
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.formHeading {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 0 0 40px 0;
+  font-size: var(--font-fluid-article-heading);
+  line-height: var(--font-title1-line-height);
+}
+
+p {
+  margin: 0 0 10px 0;
+}
+
+.formikForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  padding: 0 20px 0 20px;
+}
+
+.formLabel {
+  display: flex;
+}
+
+.formLabelValues {
+  display: flex;
+  flex-direction: column;
+}
+
+.errorMessage {
+  font-size: 12px;
+  color: red;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b6b6b;
+  margin: 0 10px 3px 0;
+}
+
+input {
+  background: none;
+  border: 1px solid var(--color-black);
+  font-size: 16px;
+  line-height: 20px;
+  color: #6b6b6b;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+select {
+  margin-bottom: 10px;
+}
+
+textarea {
+  margin-bottom: 10px;
+  height: 200px;
+}
+
+button {
+  border: 1px solid var(--color-black);
+  background: var(--color-black);
+  color: var(--color-white);
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  background: none;
+  color: var(--color-black);
+}
+
+/* STYLES FOR MODAL COMPONENT */
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  outline: none; /* Removes blue border when toggled with enter key, and when opened in Safari */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #616161;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal a {
+  text-decoration: none;
+  color: #1a66c8;
+}
+
+.modal a:hover {
+  color: #474747;
+}
+
+.modalOverlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.modalBody {
+  overflow: hidden; /* Disables scrolling on the body when the modal is active */
+}
+
+.modalIconContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.modalError {
+  color: rgb(0, 0, 0);
+}
+
+.modalSuccess {
+  color: rgb(59, 204, 33);
+}
+
+.modalContentContainer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modalButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.modalButton {
+  text-decoration: none;
+  border: 1px solid var(--color-black);
+  color: var(--color-white);
+  background: var(--color-black);
+  padding: 5px 25px 5px 25px;
+  width: 75%;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.modalButton:hover {
+  background: none;
+  color: var(--color-black);
+}

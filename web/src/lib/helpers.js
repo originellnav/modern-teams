@@ -55,3 +55,9 @@ export function toPlainText(blocks) {
     })
     .join("\n\n");
 }
+
+export function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}

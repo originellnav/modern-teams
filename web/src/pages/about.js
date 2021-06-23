@@ -2,7 +2,7 @@ import React from "react";
 import * as styles from "./about.module.css";
 import SEO from "../components/seo";
 import { graphql } from "gatsby";
-import Container from "../components/container";
+import { StaticImage } from "gatsby-plugin-image";
 import PortableText from "../components/portableText";
 
 export const query = graphql`
@@ -21,11 +21,21 @@ const About = (props) => {
   return (
     <>
       <SEO title={about.title} />
-      <Container>
-        <div className={styles.root}>
-          {about._rawAboutBody && <PortableText blocks={about._rawAboutBody} />}
-        </div>
-      </Container>
+      <main className={styles.root}>
+        <section className={styles.imageRow}>
+          <StaticImage
+            src="../images/lukepic.jpeg"
+            className={styles.headerPic}
+          />
+        </section>
+        <section className={styles.mainBackground}>
+          <article className={styles.mainContent}>
+            {about._rawAboutBody && (
+              <PortableText blocks={about._rawAboutBody} />
+            )}
+          </article>
+        </section>
+      </main>
     </>
   );
 };

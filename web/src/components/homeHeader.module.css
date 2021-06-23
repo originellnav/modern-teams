@@ -68,7 +68,7 @@
   }
 }
 
-h1 {
+.headerSection h1 {
   font-weight: 600;
   font-size: var(--font-fluid-large-heading);
   line-height: var(--font-title1-line-height);
@@ -78,7 +78,7 @@ h1 {
   }
 }
 
-h2 {
+.headerSection h2 {
   font-weight: 700;
   font-size: var(--font-fluid-large-subheading);
   line-height: var(--font-title2-line-height);
