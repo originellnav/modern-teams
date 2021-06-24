@@ -108,6 +108,7 @@ const Layout = ({ children }) => {
                       .height(20)
                       .auto("format")}
                     className={styles.socialIcon}
+                    alt="Social Icon"
                   />
                 </a>
               </span>
