@@ -1,88 +1,179 @@
-
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .root {
-    position: fixed;
-    background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    border-bottom: 1px solid var(--color-black);
-    z-index: 10;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid var(--color-black);
+  z-index: 10;
+  box-sizing: border-box;
 }
 
 .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1200px;
-    height: 70px;
-    padding: 0 20px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  height: 70px;
+  padding: 0 20px 0 20px;
+  box-sizing: border-box;
 }
 
 .navLink {
-    position: relative;
-    color: #666666;
-    font-weight: 700;
-    text-decoration: none;
-    margin: 16px;
-    padding-bottom: 5px;
-    transition: 0.8s;
+  position: relative;
+  color: #666666;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 16px;
+  padding-bottom: 5px;
+  transition: 0.8s;
+}
+
+.navLink:hover {
+  color: var(--color-black);
+}
+
+.navLink::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-black);
+  transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navLink:hover::before {
+    left: 0;
+    right: auto;
+    width: 100%;
   }
-  
-  .navLink:hover {
-    color: var(--color-black);
-  }
-  
-  .navLink::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-black);
-    transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-  
-  @media (hover: hover) and (pointer: fine) {
-    .navLink:hover::before {
-      left: 0;
-      right: auto;
-      width: 100%;
-    }
-  }
+}
 
 .button {
-    white-space: nowrap; /* Needed to keep Safari from breaking button in half */
-    margin-left: 25px;
-    text-decoration: none;
-    background-color: var(--color-black);
-    border: 1px solid var(--color-black);
-    color: var(--color-white);
-    padding: 10px 20px 10px 20px;
-    border-radius: 5px;
-    transition: 0.4s;
+  white-space: nowrap; /* Needed to keep Safari from breaking button in half */
+  margin-left: 25px;
+  text-decoration: none;
+  background-color: var(--color-black);
+  border: 1px solid var(--color-black);
+  color: var(--color-white);
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  transition: 0.4s;
 }
 
 .button:hover {
-    background: none;
-    color: var(--color-black);
+  background: none;
+  color: var(--color-black);
 }
-
+ 
 .menu {
-    display: none;
+  display: none;
 }
 
 @media (max-width: 800px) {
-    .desktopNav {
-        display: none;
-    }
+  .desktopNav {
+    display: none;
+  }
 
-    .menu {
-        display: inline;
-    }
+  .menu {
+    display: inline-block;
+  }
+}
+
+.mobileNav {
+  position: relative;
+}
+
+.mobileNav button {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.menuNav {
+  overflow-y: scroll;
+  list-style: none;
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--color-black);
+  margin-left: -40px;
+  margin-top: 70px;
+  padding-top: 10px;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 0;
+  max-width: fit-content;
+  overflow: hidden;
+  z-index: 9;
+  transition: width 0.5s;
+  border-top: 1px solid var(--color-black);
+  border-right: 1px solid var(--color-black);
+}
+
+.showMenu {
+  width: 100%;
+  max-width: fit-content;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--color-black);
+  overflow-y: scroll;
+  list-style: none;
+  position: fixed;
+  margin-left: -40px;
+  margin-top: 70px;
+  padding-top: 10px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 9;
+  transition: width 0.5s;
+  border-top: 1px solid var(--color-black);
+  border-right: 1px solid var(--color-black);
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 15px 40px;
+  text-decoration: none;
+  color: var(--color-black);
+  text-transform: uppercase;
+  font-size: var(--font-title2-size);
+  font-weight: 700;
+}
+
+.mobileButton {
+  display: block;
+  width: fit-content;
+  white-space: nowrap; /* Needed to keep Safari from breaking button in half */
+  text-decoration: none;
+  margin-top: 15px;
+  margin-left: 40px;
+  background-color: var(--color-black);
+  border: 1px solid var(--color-black);
+  color: var(--color-white);
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.menuNav li {
+  white-space: nowrap;
 }

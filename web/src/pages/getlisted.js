@@ -31,7 +31,13 @@ const Getlisted = () => {
         </div>
 
         <Formik
-          initialValues={{}}
+          initialValues={{
+            companyName: "",
+            website: "",
+            email: "",
+            jobOpenings: "none",
+            values: "",
+          }}
           validationSchema={Yup.object({
             companyName: Yup.string().required("*Required"),
             website: Yup.string().required("*Required"),
@@ -42,25 +48,29 @@ const Getlisted = () => {
             values: Yup.string().required("*Required"),
           })}
           onSubmit={(values, { setSubmitting, resetForm }) => {
-            fetch("/", {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: encode({ "form-name": "subscribe-form", ...values }),
-            })
-              .then(() => {
-                setMsgIcon(faCheck);
-                setMsgColor(styles.modalSuccess);
-                setFormMsg("Success");
-                setModalIsOpen(true);
-                resetForm(true);
+            setTimeout(() => {
+              fetch("/", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: encode({ "form-name": "subscribe-form", ...values }),
               })
-              .catch(() => {
-                setMsgIcon(faExclamationCircle);
-                setMsgColor(styles.modalError);
-                setFormMsg("Error");
-                setModalIsOpen(true);
-              })
-              .finally(() => setSubmitting(false));
+                .then(() => {
+                  setMsgIcon(faCheck);
+                  setMsgColor(styles.modalSuccess);
+                  setFormMsg("Success");
+                  setModalIsOpen(true);
+                  resetForm();
+                })
+                .catch(() => {
+                  setMsgIcon(faExclamationCircle);
+                  setMsgColor(styles.modalError);
+                  setFormMsg("Error");
+                  setModalIsOpen(true);
+                })
+                .finally(() => setSubmitting(false));
+            }, 400);
           }}
         >
           <Form
@@ -76,7 +86,7 @@ const Getlisted = () => {
                 <ErrorMessage name="companyName" />
               </div>
             </div>
-            <Field name="companyName" type="text" />
+            <Field id="companyName" name="companyName" type="text" />
 
             <div className={styles.formLabel}>
               <div>
@@ -86,7 +96,7 @@ const Getlisted = () => {
                 <ErrorMessage name="website" />
               </div>
             </div>
-            <Field name="website" type="text" />
+            <Field id="website" name="website" type="text" />
 
             <div className={styles.formLabel}>
               <div>
@@ -96,7 +106,7 @@ const Getlisted = () => {
                 <ErrorMessage name="email" />
               </div>
             </div>
-            <Field name="email" type="email" />
+            <Field id="email" name="email" type="email" />
 
             <div className={styles.formLabel}>
               <div>
@@ -106,7 +116,7 @@ const Getlisted = () => {
                 <ErrorMessage name="jobOpenings" />
               </div>
             </div>
-            <Field name="jobOpenings" as="select">
+            <Field id="jobOpenings" name="jobOpenings" as="select">
               <option value="none">None</option>
               <option value="oneToFive">1 - 5</option>
               <option value="fiveToTen">5 - 10</option>
@@ -126,7 +136,7 @@ const Getlisted = () => {
                 <ErrorMessage name="values" />
               </div>
             </div>
-            <Field name="values" type="text" as="textarea" />
+            <Field id="values" name="values" type="text" as="textarea" />
 
             <div>
               <button type="submit">SEND</button>
