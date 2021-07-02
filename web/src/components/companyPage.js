@@ -1,6 +1,6 @@
 import React from "react";
 import * as styles from "./companyPage.module.css";
-import SEO from "./seo";
+import Seo from "./seo";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { getGatsbyImageData } from "gatsby-source-sanity";
 import clientConfig from "../../client-config";
@@ -36,7 +36,7 @@ const CompanyPage = (props) => {
   );
   return (
     <>
-      <SEO title={companyName} />
+      <Seo title={companyName} />
       <main className={styles.root}>
         <section className={styles.headingRowContainer}>
           <div className={styles.logoBackground}>
@@ -62,6 +62,7 @@ const CompanyPage = (props) => {
                           .width(20)
                           .height(20)
                           .auto("format")}
+                        alt="Icon"
                         className={styles.mediaIcon}
                       />
                       {node.linkDescriptor}

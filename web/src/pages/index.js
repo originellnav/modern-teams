@@ -1,12 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 import GraphQLErrorList from "../components/graphql-error-list";
-import Layout from "../containers/layout";
 import Seo from "../components/seo";
-import HomeHeader from "../components/homeHeader";
-import CompanyGrid from "../components/companyGrid";
+import FeaturedGrid from "../components/featuredGrid";
 import CompanyCard from "../components/companyCard";
-import { mapEdgesToNodes } from "../lib/helpers";
+import Layout from "../containers/layout";
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -37,43 +35,19 @@ export const query = graphql`
       description
       keywords
     }
-    posts: allSanityPost(
-      limit: 6
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    ) {
-      edges {
-        node {
-          id
-          publishedAt
-          mainImage {
-            ...SanityImage
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
+    home: sanityHome {
+      featured {
+        companyName
+        companyExcerpt
+        _key
+        slug {
+          current
         }
-      }
-    }
-    companies: allSanityCompany(sort: { fields: [companyName], order: ASC }) {
-      edges {
-        node {
-          _id
-          companyExcerpt
-          companyLogo {
-            asset {
-              _id
-            }
-            ...SanityImage
-            caption
-            alt
-          }
-          companyName
-          slug {
-            current
+        companyLogo {
+          alt
+          caption
+          asset {
+            _id
           }
         }
       }
@@ -93,9 +67,7 @@ const IndexPage = (props) => {
   }
 
   const site = (data || {}).site;
-  const companies = (data || {}).companies
-    ? mapEdgesToNodes(data.companies)
-    : [];
+  const home = (data || {}).home;
 
   if (!site) {
     throw new Error(
@@ -110,20 +82,20 @@ const IndexPage = (props) => {
         description={site.description}
         keywords={site.keywords}
       />
-      <HomeHeader />
-      <CompanyGrid>
-        {companies.map((node) => (
+
+      <FeaturedGrid>
+        {home.featured.map((company) => (
           <CompanyCard
-            key={node._id}
-            logoSrc={node.companyLogo}
-            logoAlt={node.companyLogo.alt}
-            logoCap={node.companyLogo.caption}
-            companyName={node.companyName}
-            companyExcerpt={node.companyExcerpt}
-            companyPage={node.slug.current}
+            key={company._key}
+            logoSrc={company.companyLogo}
+            logoAlt={company.companyLogo.alt}
+            logoCap={company.companyLogo.caption}
+            companyName={company.companyName}
+            companyExcerpt={company.companyExcerpt}
+            companyPage={company.slug.current}
           />
         ))}
-      </CompanyGrid>
+      </FeaturedGrid>
     </>
   );
 };

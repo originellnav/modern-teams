@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as styles from "./getlisted.module.css";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { encode } from "../lib/helpers";
@@ -18,7 +18,7 @@ const Getlisted = () => {
   const [modalIsOpen, setModalIsOpen] = useState();
   return (
     <>
-      <SEO title="Get Listed" />
+      <Seo title="Get Listed" />
       <section className={styles.formWrapper}>
         <div className={styles.formHeading}>
           <span>

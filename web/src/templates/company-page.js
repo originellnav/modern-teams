@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import GraphQLErrorList from "../components/graphql-error-list";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import Container from "../components/container";
 import CompanyPage from "../components/companyPage";
 
@@ -46,9 +46,9 @@ const CompanyPageTemplate = (props) => {
 
   return (
     <>
-      {errors && <SEO title="GraphQL Error" />}
+      {errors && <Seo title="GraphQL Error" />}
       {company && (
-        <SEO
+        <Seo
           title={company.companyName || "Untitled"}
           description={company.companyExcerpt}
           image={company.companyLogo}

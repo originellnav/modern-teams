@@ -29,6 +29,19 @@ export default {
       ],
     },
     {
+      title: "Featured Companies",
+      name: "featured",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: {
+            type: "company",
+          },
+        },
+      ],
+    },
+    {
       title: "Subscription Form Text",
       name: "formText",
       type: "string",

@@ -1,6 +1,6 @@
 import React from "react";
 import * as styles from "./about.module.css";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import PortableText from "../components/portableText";
@@ -20,7 +20,7 @@ const About = (props) => {
 
   return (
     <>
-      <SEO title={about.title} />
+      <Seo title={about.title} />
       <main className={styles.root}>
         <section className={styles.imageRow}>
           <span className={styles.imageWrapper}>

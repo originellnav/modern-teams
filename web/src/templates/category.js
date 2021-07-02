@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import CategoryPage from "../components/categoryPage";
@@ -34,9 +34,9 @@ const CategoryPageTemplate = (props) => {
 
   return (
     <>
-      {errors && <SEO title="GraphQL Error" />}
+      {errors && <Seo title="GraphQL Error" />}
       {category && (
-        <SEO
+        <Seo
           title={category.companyName || "Untitled"}
           description={category.description}
         />
