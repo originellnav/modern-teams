@@ -14,6 +14,7 @@ import siteSettings from "./documents/siteSettings";
 import singletonHomepage from "./documents/singletonHomepage";
 import company from "./documents/company";
 import singletonAbout from "./documents/singletonAbout";
+import singletonCompanies from "./documents/singletonCompanies";
 
 // Object types
 import socialItem from "./objects/socialItem";
@@ -44,6 +45,7 @@ export default createSchema({
     company,
     singletonHomepage,
     singletonAbout,
+    singletonCompanies,
     siteSettings,
     post,
     category,
