@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import * as styles from "./homeHeader.module.css";
+import * as styles from "./companiesHeader.module.css";
 import { useStaticQuery, graphql } from "gatsby";
 import { mapEdgesToNodes } from "../lib/helpers";
 import { Link } from "gatsby";
 import { getCategoryUrl } from "../lib/helpers";
 import Typed from "typed.js";
 
-const HomeHeader = () => {
+const CompaniesHeader = () => {
   const data = useStaticQuery(graphql`
     query {
       categories: allSanityCategory(sort: { order: ASC, fields: title }) {
@@ -87,4 +87,4 @@ const HomeHeader = () => {
   );
 };
 
-export default HomeHeader;
+export default CompaniesHeader;

@@ -5,9 +5,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    margin-bottom: 50px;
-    padding-top: 100px;
+    padding: 50px 20px;
+
+    @media (max-width: 600px) {
+        padding: 25px 20px;
+    }
 }
 
 .wrapper {
@@ -19,6 +21,15 @@
     @media (max-width: 800px) {
         border: none;
     }
+}
+
+.container .link {
+    color: #666666;
+    font-weight: 700;
+}
+
+.container .link:hover {
+    color: #000;
 }
 
 .wrapper > * {

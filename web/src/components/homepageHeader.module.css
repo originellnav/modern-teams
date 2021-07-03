@@ -1,0 +1,32 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.root h1 {
+  font-family: azo-sans-web, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: calc(40px + 60 * ((100vw - 320px) / 1180));
+  line-height: calc(40px + 60 * ((100vw - 320px) / 1180));
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 20px 50px 20px;
+
+  @media (max-width: 600px){
+    margin: 0 20px 20px 20px;
+  }
+}
+
+.root h2 {
+  font-family: azo-sans-web, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: calc(22px + 20 * ((100vw - 320px) / 1180));
+  line-height: calc(22px + 20 * ((100vw - 320px) / 1180));
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 20px;
+}

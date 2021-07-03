@@ -1,12 +1,12 @@
 import React from "react";
-import HomeHeader from "./homeHeader";
+import CompaniesHeader from "./companiesHeader";
 import CompanyGrid from "./companyGrid";
 import CompanyCard from "./companyCard";
 
 const CategoryPage = ({ companies }) => {
   return (
     <>
-      <HomeHeader />
+      <CompaniesHeader />
       <CompanyGrid>
         {companies.map((node) => (
           <CompanyCard

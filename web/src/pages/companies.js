@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import GraphQLErrorList from "../components/graphql-error-list";
 import Layout from "../containers/layout";
 import Seo from "../components/seo";
-import HomeHeader from "../components/homeHeader";
+import CompaniesHeader from "../components/companiesHeader";
 import CompanyGrid from "../components/companyGrid";
 import CompanyCard from "../components/companyCard";
 import { mapEdgesToNodes } from "../lib/helpers";
@@ -67,7 +67,7 @@ const CompaniesPage = (props) => {
         description={site.description}
         keywords={site.keywords}
       />
-      <HomeHeader />
+      <CompaniesHeader />
       <CompanyGrid>
         {companies.map((node) => (
           <CompanyCard

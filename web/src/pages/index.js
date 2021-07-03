@@ -5,6 +5,8 @@ import Seo from "../components/seo";
 import FeaturedGrid from "../components/featuredGrid";
 import CompanyCard from "../components/companyCard";
 import Layout from "../containers/layout";
+import HomepageHeader from "../components/homepageHeader";
+import HomepageCTA from "../components/homepageCTA";
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -82,7 +84,7 @@ const IndexPage = (props) => {
         description={site.description}
         keywords={site.keywords}
       />
-
+      <HomepageHeader />
       <FeaturedGrid>
         {home.featured.map((company) => (
           <CompanyCard
@@ -96,6 +98,7 @@ const IndexPage = (props) => {
           />
         ))}
       </FeaturedGrid>
+      <HomepageCTA />
     </>
   );
 };
