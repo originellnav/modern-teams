@@ -12,6 +12,10 @@
   width: 100%;
   max-width: 1200px;
   border-radius: 5px;
+
+  @media (max-width: 1200px) {
+    border-radius: 0;
+  }
 }
 
 .wrapper span {
