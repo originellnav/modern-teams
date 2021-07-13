@@ -8,7 +8,7 @@ export const query = graphql`
   query AboutPageQuery {
     about: sanityAbout {
       title
-      _rawAboutBody
+      _rawAboutBody(resolveReferences: { maxDepth: 5 })
     }
   }
 `;

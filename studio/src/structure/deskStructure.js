@@ -8,6 +8,7 @@ import {
   FcList,
   FcSignature,
   FcLink,
+  FcCollaboration,
 } from "react-icons/fc";
 import EyeIcon from "part:@sanity/base/eye-icon";
 import EditIcon from "part:@sanity/base/edit-icon";
@@ -62,6 +63,15 @@ export default () =>
             .id("home")
             .schemaType("home")
             .documentId("singletonHomepage")
+        ),
+      S.listItem()
+        .title("Companies Page")
+        .icon(FcCollaboration)
+        .child(
+          S.editor()
+            .id("companies")
+            .schemaType("companies")
+            .documentId("singletonCompanies")
         ),
       S.listItem()
         .title("About Page")
@@ -122,6 +132,7 @@ export default () =>
             "post",
             "siteSettings",
             "home",
+            "companies",
             "about",
             "company",
           ].includes(listItem.getId())

@@ -5,28 +5,22 @@ export default {
   __experimental_actions: ["update", /* 'create', 'delete', */ "publish"],
   fields: [
     {
-      title: "title",
+      title: "Page Title",
       name: "title",
       type: "string",
       validation: (Rule) => Rule.required(),
     },
     {
       title: "Heading",
-      name: "homepageHeading",
+      name: "heading",
       type: "string",
       validation: (Rule) => Rule.required(),
     },
     {
       title: "Subheading",
-      name: "homepageSubheading",
-      type: "array",
-      description: "Add/delete/edit/re-order sub-heading items.",
-      of: [
-        {
-          type: "string",
-          name: "subheadingItem",
-        },
-      ],
+      name: "subheading",
+      type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Featured Companies",

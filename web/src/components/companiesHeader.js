@@ -20,7 +20,7 @@ const CompaniesHeader = () => {
           }
         }
       }
-      home: sanityHome {
+      companyPage: sanityCompanies {
         homepageHeading
         homepageSubheading
       }
@@ -29,7 +29,7 @@ const CompaniesHeader = () => {
 
   const categories =
     data && data.categories && mapEdgesToNodes(data.categories);
-  const home = (data || {}).home;
+  const companyPage = (data || {}).companyPage;
   const el = useRef(null);
   const typed = useRef(null);
 
@@ -52,10 +52,10 @@ const CompaniesHeader = () => {
   return (
     <div className={styles.wrapper}>
       <section className={styles.headerSection}>
-        <h1>{home.homepageHeading}</h1>
+        <h1>{companyPage.homepageHeading}</h1>
         <h2 style={{ whitespace: "pre" }} ref={el} />
         <div id="typed-strings">
-          {home.homepageSubheading.map((node, index) => (
+          {companyPage.homepageSubheading.map((node, index) => (
             <p key={index}>{node}</p>
           ))}
         </div>
