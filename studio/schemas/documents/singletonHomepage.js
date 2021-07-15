@@ -36,6 +36,12 @@ export default {
       ],
     },
     {
+      title: "Features of Modern Teams",
+      name: "teamFeatures",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+    {
       title: "Subscription Form Text",
       name: "formText",
       type: "string",

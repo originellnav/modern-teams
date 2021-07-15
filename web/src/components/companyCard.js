@@ -39,7 +39,7 @@ const CompanyCard = ({
       </div>
       <div className={styles.buttonWrapper}>
         <Link to={getCompanyUrl(companyPage)} className={styles.button}>
-          View Bio
+          View Profile
         </Link>
       </div>
     </article>

@@ -6,6 +6,7 @@ import FeaturedGrid from "../components/featuredGrid";
 import CompanyCard from "../components/companyCard";
 import Layout from "../containers/layout";
 import HomepageHeader from "../components/homepageHeader";
+import HomepageExplainer from "../components/homepageExplainer";
 import HomepageCTA from "../components/homepageCTA";
 
 export const query = graphql`
@@ -38,6 +39,7 @@ export const query = graphql`
       keywords
     }
     home: sanityHome {
+      teamFeatures
       featured {
         companyName
         companyExcerpt
@@ -99,6 +101,7 @@ const IndexPage = (props) => {
         ))}
       </FeaturedGrid>
       <HomepageCTA />
+      <HomepageExplainer {...home} />
     </>
   );
 };
