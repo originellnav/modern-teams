@@ -5,9 +5,7 @@
 }
 
 :root {
-  --font-family-sans: "Mabry", sans-serif;
-  --font-family-headings: "Mabry", sans-serif;
-
+  /* Variable */
   --color-black: #222222;
   --color-dark-gray: #32373e;
   --color-gray: #d3d3d3;
@@ -17,6 +15,9 @@
   --color-accent: #156dff;
 
   /* Typography */
+  --font-family-sans: "Mabry", sans-serif;
+  --font-family-headings: "Mabry", sans-serif;
+
   --unit: 16;
   --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
   --font-micro-line-height: calc(12 / 10); /* 12px */
@@ -27,13 +28,16 @@
   --font-large-size: calc(18 / var(--unit) * 1rem); /* 18px */
   --font-large-line-height: calc(27 / 18); /* 27px */
 
-  --font-title3-size: calc(21 / var(--unit) * 1rem); /* 21px */
-  --font-title3-line-height: calc(30 / 21); /* 30px */
-  --font-title2-size: calc(24 / var(--unit) * 1rem); /* 24px */
-  --font-title2-line-height: calc(29 / 24);
-  --font-title1-size: calc(49 / var(--unit) * 1rem); /* 49px */
-  --font-title1-line-height: calc(50 / 49);
   --font-fluid-large-heading: calc(32px + 30 * ((100vw - 320px) / 1180));
   --font-fluid-large-subheading: calc(22px + 20 * ((100vw - 320px) / 1180));
   --font-fluid-article-heading: calc(18px + 24 * ((100vw - 320px) / 1180));
+
+  --sanity-font-h1: calc(56px + 40 * ((100vw - 320px) / 1920));
+  --sanity-line-height-h1: calc(5px + var(--sanity-font-h1));
+  --sanity-font-h2: calc(42px + 40 * ((100vw - 320px) / 1920));
+  --sanity-line-height-h2: calc(5px + var(--sanity-font-h2));
+  --sanity-font-h3: calc(22px + 40 * ((100vw - 320px) / 1920));
+  --sanity-line-height-h3: calc(5px + var(--sanity-font-h3));
+  --sanity-font-h4: calc(18px + 40 * ((100vw - 320px) / 1920));
+  --sanity-line-height-h4: calc(5px + var(--sanity-font-h4));
 }

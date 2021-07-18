@@ -61,10 +61,13 @@ const CompaniesHeader = () => {
         </div>
         <span id="typed"></span>
       </section>
+      <section className={styles.categoryTitle}>
+        Select your preferred benefit to find teams that match:
+      </section>
       <section className={styles.categories}>
         <span className={styles.activeWrapper}>
           <Link
-            to="/"
+            to="/companies/"
             className={styles.underline}
             activeClassName={styles.active}
           >

@@ -13,10 +13,28 @@
   margin-bottom: 50px;
 }
 
+.mainContent h1 {
+  font-size: var(--sanity-font-h1);
+  line-height: var(--sanity-line-height-h1);
+  margin: 20px 0;
+}
+
 .mainContent h2 {
-  font-size: var(--font-title2-size);
-  line-height: var(--font-title2-line-height);
-  margin: 10px 0 20px 0;
+  font-size: var(--sanity-font-h2);
+  line-height: var(--sanity-line-height-h2);
+  margin: 20px 0;
+}
+
+.mainContent h3 {
+  font-size: var(--sanity-font-h3);
+  line-height: var(--sanity-line-height-h3);
+  margin: 20px 0;
+}
+
+.mainContent h4 {
+  font-size: var(--sanity-font-h4);
+  line-height: var(--sanity-line-height-h4);
+  margin: 20px 0;
 }
 
 .mainContent p {

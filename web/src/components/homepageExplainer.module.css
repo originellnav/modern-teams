@@ -25,6 +25,6 @@
   font-size: 24px;
 }
 
-ul li:before {
+.root ul li:before {
   content: '✓ ';
 }

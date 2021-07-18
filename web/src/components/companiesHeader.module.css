@@ -71,7 +71,7 @@
 .headerSection h1 {
   font-weight: 600;
   font-size: var(--font-fluid-large-heading);
-  line-height: var(--font-title1-line-height);
+  line-height: var(--font-fluid-large-heading);
 
   @media (max-width: 414px) {
     padding: 0 10px 0 10px;
@@ -81,12 +81,19 @@
 .headerSection h2 {
   font-weight: 700;
   font-size: var(--font-fluid-large-subheading);
-  line-height: var(--font-title2-line-height);
-  height: 50px;                                 /* Keeps content below from collapsing upwards between subheader animations */
+  line-height: var(--font-fluid-large-subheading);
+  height: 50px; /* Keeps content below from collapsing upwards between subheader animations */
 
   @media (max-width: 414px) {
     padding: 0 10px 0 10px;
   }
+}
+
+.categoryTitle {
+  color: #616161;
+  font-size: calc(18px + 6 * ((100vw - 320px) / 1180));
+  font-weight: 700;
+  padding: 0 20px;
 }
 
 .categories {
