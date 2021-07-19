@@ -21,32 +21,39 @@
   }
 }
 
+.textAndMessage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: -16px;
+  height: 30px;
+
+  @media (max-width: 800px) {
+    height: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+.messageContainer {
+  color: rgb(211, 67, 91);
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+}
+
 .signupText {
   margin-right: 10px;
   color: var(--color-gray);
   font-weight: 700;
   width: 100%;
   white-space: nowrap;
+  margin-bottom: -4px;
 
   @media (max-width: 800px) {
     font-size: 14px;
     white-space: initial;
     margin-right: 0;
     text-align: center;
-  }
-}
-
-.messageContainer {
-  text-align: right;
-  height: 20px;
-  margin-bottom: -20px;
-  color: rgb(211, 67, 91);
-  width: 100%;
-  line-height: 14px;
-
-  @media (max-width: 800px) {
-    height: 45px;
-    text-align: left;
   }
 }
 

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 100px 0;
+  margin-bottom: 100px;
 }
 
 .root .title {
@@ -14,8 +14,8 @@
   list-style-type: none;
   max-width: 1200px;
   width: 100%;
-  padding: 0 20px;
   text-align: center;
+  padding: 0;             /* Fixes x-axis viewport bleed issue */
 }
 
 .root ul li {

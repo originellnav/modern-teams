@@ -12,15 +12,21 @@ export default {
     },
     {
       title: "Heading",
-      name: "heading",
+      name: "homepageHeading",
       type: "string",
       validation: (Rule) => Rule.required(),
     },
     {
       title: "Subheading",
-      name: "subheading",
-      type: "string",
-      validation: (Rule) => Rule.required(),
+      name: "homepageSubheading",
+      type: "array",
+      description: "Add/delete/edit/re-order sub-heading items.",
+      of: [
+        {
+          type: "string",
+          name: "subheadingItem",
+        },
+      ],
     },
     {
       title: "Featured Companies",

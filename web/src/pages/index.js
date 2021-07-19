@@ -2,12 +2,11 @@ import React from "react";
 import { graphql } from "gatsby";
 import GraphQLErrorList from "../components/graphql-error-list";
 import Seo from "../components/seo";
+import SharedHeading from "../components/sharedHeading";
 import FeaturedGrid from "../components/featuredGrid";
 import CompanyCard from "../components/companyCard";
 import Layout from "../containers/layout";
-import HomepageHeader from "../components/homepageHeader";
 import HomepageExplainer from "../components/homepageExplainer";
-import HomepageCTA from "../components/homepageCTA";
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -86,7 +85,7 @@ const IndexPage = (props) => {
         description={site.description}
         keywords={site.keywords}
       />
-      <HomepageHeader />
+      <SharedHeading />
       <FeaturedGrid>
         {home.featured.map((company) => (
           <CompanyCard
@@ -100,7 +99,6 @@ const IndexPage = (props) => {
           />
         ))}
       </FeaturedGrid>
-      <HomepageCTA />
       <HomepageExplainer {...home} />
     </>
   );

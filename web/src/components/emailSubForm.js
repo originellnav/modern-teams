@@ -58,7 +58,12 @@ const EmailSubForm = () => {
         <Form>
           <div className={styles.formContainer}>
             <div className={styles.inputContainer}>
-              <span className={styles.signupText}>{footer.formText}</span>
+              <span className={styles.textAndMessage}>
+                <span className={styles.messageContainer}>
+                  <ErrorMessage name="email" />
+                </span>
+                <span className={styles.signupText}>{footer.formText}</span>
+              </span>
               <div className={styles.inputAndButtonWrapper}>
                 <Field
                   id="email"
@@ -72,9 +77,6 @@ const EmailSubForm = () => {
                   Subscribe
                 </button>
               </div>
-            </div>
-            <div className={styles.messageContainer}>
-              <ErrorMessage name="email" />
             </div>
           </div>
         </Form>

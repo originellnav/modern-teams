@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import * as styles from "./companiesHeader.module.css";
 import { useStaticQuery, graphql } from "gatsby";
 import { mapEdgesToNodes } from "../lib/helpers";
 import { Link } from "gatsby";
 import { getCategoryUrl } from "../lib/helpers";
-import Typed from "typed.js";
+import SharedHeading from "./sharedHeading";
 
 const CompaniesHeader = () => {
   const data = useStaticQuery(graphql`
@@ -20,47 +20,15 @@ const CompaniesHeader = () => {
           }
         }
       }
-      companyPage: sanityCompanies {
-        homepageHeading
-        homepageSubheading
-      }
     }
   `);
 
   const categories =
     data && data.categories && mapEdgesToNodes(data.categories);
-  const companyPage = (data || {}).companyPage;
-  const el = useRef(null);
-  const typed = useRef(null);
-
-  useEffect(() => {
-    const options = {
-      stringsElement: "#typed-strings",
-      typeSpeed: 80,
-      backSpeed: 10,
-      loop: true,
-      showCursor: false,
-    };
-
-    typed.current = new Typed(el.current, options);
-
-    return () => {
-      typed.current.destroy();
-    };
-  }, []);
 
   return (
     <div className={styles.wrapper}>
-      <section className={styles.headerSection}>
-        <h1>{companyPage.homepageHeading}</h1>
-        <h2 style={{ whitespace: "pre" }} ref={el} />
-        <div id="typed-strings">
-          {companyPage.homepageSubheading.map((node, index) => (
-            <p key={index}>{node}</p>
-          ))}
-        </div>
-        <span id="typed"></span>
-      </section>
+      <SharedHeading />
       <section className={styles.categoryTitle}>
         Select your preferred benefit to find teams that match:
       </section>
