@@ -16,7 +16,8 @@
 
   @media (max-width: 800px) {
     flex-direction: column;
-    height: 150px;
+    height: 100px;
+    margin-bottom: 10px;
     justify-content: space-evenly;
   }
 }
@@ -24,13 +25,12 @@
 .textAndMessage {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  margin-top: -16px;
+  justify-content: space-between;
   height: 30px;
 
   @media (max-width: 800px) {
-    height: 30px;
-    margin-bottom: 20px;
+    height: 35px;
+    margin-bottom: 5px;
   }
 }
 
@@ -47,7 +47,6 @@
   font-weight: 700;
   width: 100%;
   white-space: nowrap;
-  margin-bottom: -4px;
 
   @media (max-width: 800px) {
     font-size: 14px;

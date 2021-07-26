@@ -13,9 +13,13 @@
   height: 60px;
   background-color: #222222;
   color: var(--color-white);
+  /* Mitigates gap between footer and content caused by scroll function */
+  margin-top: -60px;
 
   @media (max-width: 800px) {
-    height: 170px;
+    height: 150px;
+    /* Mitigates gap between footer and content caused by scroll function */
+    margin-top: -150px;
   }
 }
 
@@ -29,7 +33,7 @@
 
   @media (max-width: 500px) {
     flex-direction: column;
-    padding-top: 30px;
+    padding-top: 15px;
   }
 }
 
