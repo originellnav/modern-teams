@@ -8,6 +8,7 @@
 
 .mainContent {
   max-width: 900px;
+  width: 100%;
   padding: 0 20px 0 20px;
   box-sizing: border-box;
   margin-bottom: 50px;
@@ -35,6 +36,7 @@
   font-size: var(--sanity-font-h4);
   line-height: var(--sanity-line-height-h4);
   margin: 20px 0;
+  white-space: unset;
 }
 
 .mainContent p {
