@@ -36,20 +36,12 @@ const Layout = ({ children }) => {
   `);
 
   const footer = (data || {}).footer;
+  const stickyVariant = sticky ? "" : styles.sticky;
   return (
     <>
       <NavBar />
       <div className={styles.content}>{children}</div>
-      <footer
-        className={styles.footer}
-        style={{
-          position: "sticky",
-          transform: sticky ? "translateY(100%)" : "translateY(0)",
-          transition: "transform 400ms ease-in",
-          bottom: 0,
-          left: 0,
-        }}
-      >
+      <footer className={`${styles.footer} ${stickyVariant}`}>
         <div className={styles.wrapper}>
           <EmailSubForm />
           <article className={styles.iconContainer}>
