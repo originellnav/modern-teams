@@ -37,10 +37,11 @@ const Layout = ({ children }) => {
 
   const footer = (data || {}).footer;
   const stickyVariant = sticky ? "" : styles.sticky;
+  const spacingFix = sticky ? "" : styles.contentSticky;
   return (
     <>
       <NavBar />
-      <div className={styles.content}>{children}</div>
+      <div className={`${styles.content} ${spacingFix}`}>{children}</div>
       <footer className={`${styles.footer} ${stickyVariant}`}>
         <div className={styles.wrapper}>
           <EmailSubForm />
