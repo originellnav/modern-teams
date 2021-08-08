@@ -13,6 +13,7 @@
 }
 
 .container .title {
+    font-family: var(--font-family-headings);
     color: #616161;
     font-size: calc(18px + 6 * ((100vw - 320px) / 1180));
 }
@@ -33,12 +34,14 @@
 }
 
 .container .link {
+    font-family: var(--font-family-headings);
+    font-size: 24px;
     color: #666666;
     font-weight: 700;
 }
 
 .container .link:hover {
-    color: #000;
+    color: rgb(211, 67, 91);
 }
 
 .wrapper > * {

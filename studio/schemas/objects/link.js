@@ -19,7 +19,7 @@ export default {
       name: "linkUrl",
       title: "Link URL",
       description:
-        "For external links use full URL e.g. ‘https://google.com/’. For internal links use the page path e.g. ‘/about/’",
+        "WARNING: Internal page path can't be changed here, only set here. For external links use full URL e.g. ‘https://google.com/’. For internal links use the page path e.g. ‘/about/’",
       type: "string",
     },
   ],

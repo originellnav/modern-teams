@@ -16,7 +16,7 @@
 
   /* Typography */
   --font-family-sans: "Mabry", sans-serif;
-  --font-family-headings: "Mabry", sans-serif;
+  --font-family-headings: "sofia-pro", sans-serif;
 
   --unit: 16;
   --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
